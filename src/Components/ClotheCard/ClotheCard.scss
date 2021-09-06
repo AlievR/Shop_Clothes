@@ -1,0 +1,58 @@
+.app-clothes-item{
+    font-size: 16px;
+    &__card{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    &__picture{
+        width: 100%;
+        margin-bottom: 7px;
+    }
+    &__img{
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    &__text{
+        font-family: 'Montserrat', sans-serif;
+    }
+    &__title{
+        padding: 0;
+        height: 30px;
+        font-size: 1em;
+    }
+    &__info{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-price{
+            font-weight: 700;
+            font-size: 1.125em;
+        }
+        &-open{
+            background-color: #ff6163;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &-basket{
+            background: no-repeat url('../../Image/Header/1-1.svg') ;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+
+    @media screen and (max-width: 540px) {
+        font-size: 13px;
+    }
+
+    @media screen and (max-width: 420px) {
+        font-size: 16px;
+    }
+}

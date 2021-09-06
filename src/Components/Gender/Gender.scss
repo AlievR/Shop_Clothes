@@ -1,0 +1,30 @@
+.app-gender{
+    margin-bottom: 50px;
+    &__items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__item {
+        list-style-type: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        &:first-child{
+            margin-right: 15px;
+        }
+    }
+    &__link{
+        text-decoration: none;
+        color: black;
+    }
+}
+
+.active-gender{
+    border-bottom: 3px solid black;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}

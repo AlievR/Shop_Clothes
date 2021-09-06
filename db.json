@@ -1,0 +1,177 @@
+{
+  "man-clothes": [
+    {
+      "id": 0,
+      "name": "Хлопковый свитшот",
+      "price": 2299,
+      "sizes": [
+        {"id" : 1, "value": "s" },
+        {"id" : 2, "value": "m" },
+        {"id" : 3, "value": "l" }
+      ],
+      "color" : "Синий",
+      "img_main": "http://127.0.0.1/model0.jpg",
+      "img_card1": "http://127.0.0.1/detail/model0-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model0-2.jpg"
+    },
+    {
+      "id": 1,
+      "name": "Футболка из хлопка премиум",
+      "price": 1199,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 1, "value": "s" },
+        {"id" : 2, "value": "m" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Белый",
+      "img_main": "http://127.0.0.1/model1.jpg",
+      "img_card1": "http://127.0.0.1/detail/model1-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model1-2.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Рубашка Regular Fit",
+      "price": 1790,
+      "sizes": [
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Белый",
+      "img_main": "http://127.0.0.1/model2.jpg",
+      "img_card1": "http://127.0.0.1/detail/model2-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model2-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Рубашка поло из хлопка",
+      "price": 1999,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 3, "value": "l" }
+      ],
+      "color" : "Зеленый",
+      "img_main": "http://127.0.0.1/model3.jpg",
+      "img_card1": "http://127.0.0.1/detail/model3-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model3-2.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Куртка из плюша",
+      "price": 3210,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 1, "value": "s" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Бежевый",
+      "img_main": "http://127.0.0.1/model4.jpg",
+      "img_card1": "http://127.0.0.1/detail/model4-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model4-2.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Свитшот Relaxed Fit",
+      "price": 1199,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 1, "value": "s" },
+        {"id" : 2, "value": "m" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Черный",
+      "img_main": "http://127.0.0.1/model5.jpg",
+      "img_card1": "http://127.0.0.1/detail/model5-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model5-2.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Джоггеры Regular Tapered",
+      "price": 3290,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 2, "value": "m" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Синий",
+      "img_main": "http://127.0.0.1/model6.jpg",
+      "img_card1": "http://127.0.0.1/detail/model6-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model6-2.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Утепленная куртка",
+      "price": 2299,
+      "sizes": [
+        {"id" : 1, "value": "s" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Коричневый",
+      "img_main": "http://127.0.0.1/model7.jpg",
+      "img_card1": "http://127.0.0.1/detail/model7-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model7-2.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Хлопковые джоггеры",
+      "price": 2990,
+      "sizes": [
+        {"id" : 2, "value": "m" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Черный",
+      "img_main": "http://127.0.0.1/model8.jpg",
+      "img_card1": "http://127.0.0.1/detail/model8-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model8-2.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Шорты из футера Regular Fit",
+      "price": 2100,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 1, "value": "s" },
+        {"id" : 2, "value": "m" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Зеленый",
+      "img_main": "http://127.0.0.1/model9.jpg",
+      "img_card1": "http://127.0.0.1/detail/model9-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model9-2.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Джоггеры карго",
+      "price": 3290,
+      "sizes": [
+        {"id" : 3, "value": "l" }
+      ],
+      "color" : "Бежевый",
+      "img_main": "http://127.0.0.1/model10.jpg",
+      "img_card1": "http://127.0.0.1/detail/model10-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model10-2.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Джоггеры Slim Fit",
+      "price": 1699,
+      "sizes": [
+        {"id" : 0, "value": "xs" },
+        {"id" : 1, "value": "s" },
+        {"id" : 2, "value": "m" },
+        {"id" : 3, "value": "l" },
+        {"id" : 4, "value": "xl" }
+      ],
+      "color" : "Коричневый",
+      "img_main": "http://127.0.0.1/model11.jpg",
+      "img_card1": "http://127.0.0.1/detail/model11-1.jpg",
+      "img_card2": "http://127.0.0.1/detail/model11-2.jpg"
+    }
+  ]
+}
