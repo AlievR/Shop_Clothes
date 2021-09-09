@@ -17,6 +17,7 @@ const App: React.FC = () => {
       <Header />
       <Switch>
         <Route path="/" component={Main} exact/>
+        <Route path="/woman" component={Main} exact/>
         <Route path="/product-detail/:id" component={ProductDetail} />
       </Switch>
       <Footer />
