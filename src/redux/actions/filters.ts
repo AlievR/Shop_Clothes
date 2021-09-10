@@ -1,13 +1,24 @@
-import {IfiltersAction, filtersActionTypes} from '../../type/filter'
+import {IfiltersAction, categoryActionTypes} from '../../type/filter'
 
 
-export const sizeFilters = (size: string) : IfiltersAction => ({
-    type: filtersActionTypes.SIZE_FILTERS,
+export const sizeCategory = (size: string) : IfiltersAction => ({
+    type: categoryActionTypes.SIZE_CATEGORY,
     payload: size
 })
 
 
-export const colorFilters = (color: string) : IfiltersAction => ({
-    type: filtersActionTypes.COLOR_FILTERS,
+export const colorCategory = (color: string) : IfiltersAction => ({
+    type: categoryActionTypes.COLOR_CATEGORY,
     payload: color
+})
+
+export const sortCategory = (sort : string) : IfiltersAction => ({
+    type: categoryActionTypes.SORT_CATEGORY,
+    payload: sort
+})
+
+
+export const searchCategory = (term : string) : IfiltersAction => ({
+    type: categoryActionTypes.SEARCH_CATEGORY,
+    payload: term
 })

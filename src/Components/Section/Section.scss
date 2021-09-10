@@ -1,0 +1,18 @@
+.app-sort-select{
+    list-style-type: none;
+    width: 100%;
+    background-color: #fff;;
+    padding: 7px;
+    cursor: pointer;
+    &__box{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    }
+}
+
+
+.active__box{
+    background: black;
+    border-radius: 50%;
+}

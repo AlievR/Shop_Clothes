@@ -10,18 +10,21 @@
     &__item{
         list-style-type: none;
         width: 100%;
-        font-weight: 700;
         background-color: #fff;;
         border-radius: 5px;
         padding: 11px;
         display: block;
-
         height: 44px;
         cursor: pointer;
         border: 1px solid;
 
         &:not(:last-child){
             margin: 0 0 8px;
+        }
+
+        &:hover{
+            background-color: #0770cf;
+            color: #fff;
         }
     }
 }

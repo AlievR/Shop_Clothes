@@ -14,8 +14,8 @@ const ProductDetail: React.FC = () => {
         id: 0,
         name: '',
         price: 0,
-        sizes: [],
-        colors: '',
+        size: [],
+        color: '',
         img_main: '',
         img_card1: '',
         img_card2: '',
@@ -33,7 +33,7 @@ const ProductDetail: React.FC = () => {
         fetchMyAPI()
     }, [])
 
-    const { name, price, colors, sizes, img_card1, img_card2 } = items
+    const { name, price, color, size, img_card1, img_card2 } = items
 
 
     return (
@@ -57,7 +57,7 @@ const ProductDetail: React.FC = () => {
                         </div>
                         <div className="app-product-detail__info-color">
                             <label className="app-product-detail__info-color-label">Цвет:</label>
-                            <span className="app-product-detail__info-color-value"> {colors} </span>
+                            <span className="app-product-detail__info-color-value"> {color} </span>
                         </div>
                         <div>
                             <ButtonDrop items = {categories[1]} />

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import './ClotheCards.scss'
 import { selectClothesLength, selectLoading, selectError, 
-selectGender, selectClothesIds, selectFilteredTodoIds } from '../../redux/reducers/clothes'
+selectGender, selectClothesIds } from '../../redux/reducers/clothes'
 import ClotheCard from '../ClotheCard/ClotheCard'
 import {fetchClothes} from '../../redux/actions/clothes'
 import SpinnerLoading from '../SpinnerLoading/SpinnerLoading'
@@ -14,7 +14,7 @@ const ClotheCards: React.FC = () => {
     const error = useSelector(selectError)
     const length = useSelector(selectClothesLength)
     const gender = useSelector(selectGender)
-    const clothesId = useSelector(selectFilteredTodoIds)
+    const clothesId = useSelector(selectClothesIds)
 
     const dispatch = useDispatch() 
 

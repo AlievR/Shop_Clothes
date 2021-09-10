@@ -23,8 +23,8 @@ export interface IlistClothes {
     id : number,
     name : string,
     price : number,
-    sizes : string[],
-    colors : string,
+    size : string[],
+    color : string,
     img_main: string,
     img_card1 : string,
     img_card2 : string,
@@ -45,16 +45,35 @@ interface ImuiltiProps {
     options: IcategoryPosition[]
 }
 
+
 export interface IbuttonDropComponent {
     items: IbuttonProps
 }
 
 export interface ImultiFilterComponent {
-    items: ImuiltiProps
+    nameCategory: string,
+    options: IcategoryPosition[]
 }
 
 export interface IcategoryComponent {
     options: ImuiltiProps
+}
+
+export interface IsectionComponent {
+    options: IcategoryPosition[]
+}
+
+export enum categoryClothes {
+    sort = "sort",
+    size = "size",
+    color = "color",
+    price = "price"
+}
+
+export enum sortClothes {
+    popular = "popular",
+    increase = "increase",
+    decrease = "decrease",
 }
 
 export enum clothesActionTypes {
@@ -63,6 +82,8 @@ export enum clothesActionTypes {
     ERROR_CLOTHES = "clothes/clothesError",
     GENDER_CLOTHES = "clothes/clothesGender",
 }
+
+
 
 export interface IclothesState {
     items: IlistClothes[],

@@ -2,14 +2,13 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import './MultiFilter.scss'
 import { ImultiFilterComponent } from '../../type/shop'
-import { sizeFilters, colorFilters } from '../../redux/actions/filters'
+import { sizeCategory, colorCategory } from '../../redux/actions/filters'
 import { selectOptionsCategory } from '../../redux/reducers/filters'
 import { RootState } from '../../redux/reducers'
 
 
-const MultiFilter: React.FC<ImultiFilterComponent> = ({ items }) => {
+const MultiFilter: React.FC<ImultiFilterComponent> = ({ nameCategory, options }) => {
 
-    const {nameCategory, options} = items
 
     const activeOpt = useSelector((state: RootState) => selectOptionsCategory(state, nameCategory))
 
@@ -18,16 +17,16 @@ const MultiFilter: React.FC<ImultiFilterComponent> = ({ items }) => {
     const handleClickActiveFilter = (name: string) => {
         switch (nameCategory) {
             case "size":
-                return dispatch(sizeFilters(name))
+                return dispatch(sizeCategory(name))
             case "color":
-                return dispatch(colorFilters(name))
+                return dispatch(colorCategory(name))
         }
     }
 
     const renderFilterItems = options.map((opt) => {
         const { id, value, name } = opt
         let className = "app-multi-filter__item"
-        if (name.toUpperCase() === activeOpt) {
+        if (activeOpt.includes(name)) {
             className += " active-flter"
         }
         return (
@@ -35,19 +34,17 @@ const MultiFilter: React.FC<ImultiFilterComponent> = ({ items }) => {
                 className={className} key={id}
                 onClick={() => handleClickActiveFilter(name)}
             >
-                {value}
+                <span>
+                    {value}
+                </span>
             </li>
         )
     })
 
     return (
-        <div
-            className="app-multi-filter"
-        >
-            <ul className="app-multi-filter__items">
-                {renderFilterItems}
-            </ul>
-        </div>
+        <>
+            {renderFilterItems}
+        </>
     )
 }
 
