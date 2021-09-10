@@ -20,6 +20,13 @@ const Categories: React.FC = () => {
                         )
                     })
                 }
+                <li className="app-categories__item">
+                    <button className="app-categories__delete-filters">
+                        <span>
+                           Очистить фильтры
+                        </span>
+                    </button>
+                </li>
             </ul>
         </div>
     )

@@ -22,3 +22,5 @@ export const searchCategory = (term : string) : IfiltersAction => ({
     type: categoryActionTypes.SEARCH_CATEGORY,
     payload: term
 })
+
+

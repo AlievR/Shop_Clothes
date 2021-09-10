@@ -32,7 +32,6 @@ const colorPosition : IcategoryPosition[] = [
 export const categories : Icategories[] = [
     { id: 0, nameCategory: "sort", label: "Сортировать", options: sortPosition },
     { id: 1, nameCategory: "size", label: "Размер", options: sizePosition },
-    { id: 2, nameCategory: "color", label: "Цвет", options: colorPosition },
-    { id: 3, nameCategory: "price", label: "Цена", options: sortPosition }
+    { id: 2, nameCategory: "color", label: "Цвет", options: colorPosition }
 ]
 

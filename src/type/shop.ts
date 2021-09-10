@@ -63,6 +63,11 @@ export interface IsectionComponent {
     options: IcategoryPosition[]
 }
 
+export interface IpaginationComponent {
+    paginatioPage: number,
+    lengthClothes: number
+}
+
 export enum categoryClothes {
     sort = "sort",
     size = "size",
@@ -81,15 +86,16 @@ export enum clothesActionTypes {
     LOADING_CLOTHES = "clothes/clothesLoading",
     ERROR_CLOTHES = "clothes/clothesError",
     GENDER_CLOTHES = "clothes/clothesGender",
+    PAGINATION_CLOTHES= "clothes/clothesPagination"
 }
-
-
 
 export interface IclothesState {
     items: IlistClothes[],
     loading: boolean,
     error: null | string,
-    gender: string
+    gender: string,
+    currentPage: number,
+    clothesPerPage: number,
 }
 
 interface IfetchClothesAction {
@@ -112,5 +118,11 @@ interface IgenderClothesAction {
     payload: string
 }
 
+interface IpaginationClothesAction {
+    type: clothesActionTypes.PAGINATION_CLOTHES,
+    payload: number
+}
+
+
 export type IclothesAction = IfetchClothesAction | IloadingClothesAction 
-| IerrorClothesAction | IgenderClothesAction
+| IerrorClothesAction | IgenderClothesAction | IpaginationClothesAction

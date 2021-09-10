@@ -43,6 +43,8 @@ export const filters = (state = initialState, action: IfiltersAction): Icategory
     }
 }
 
+export const selectFilters = (state: RootState) => state.filters;
+
 export const selectOptionsCategory = (state: RootState, name: string) => {
     const {sizes, colors} = state.filters
     switch(name){

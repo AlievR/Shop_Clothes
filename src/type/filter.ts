@@ -10,8 +10,7 @@ export enum categoryActionTypes {
     SIZE_CATEGORY = "category/sizeCategory",
     COLOR_CATEGORY = "category/colorCategory",
     SORT_CATEGORY = "category/sortCategory",
-    SEARCH_CATEGORY = "category/searchCategory",
-    PAGINATION_CATEGORY = "category/paginationCategory"
+    SEARCH_CATEGORY = "category/searchCategory"
 }
 
 
@@ -37,12 +36,8 @@ interface IsearchCategoryAction {
 }
 
 
-interface IpaginationCategoryAction {
-    type: categoryActionTypes.PAGINATION_CATEGORY,
-    payload: number
-}
 
 
 export type IfiltersAction = IsizeCategoryAction 
 | IcolorCategoryAction | IsortCategoryAction 
-| IsearchCategoryAction | IpaginationCategoryAction
+| IsearchCategoryAction 
