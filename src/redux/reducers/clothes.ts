@@ -1,5 +1,5 @@
 import { IclothesState, IclothesAction, clothesActionTypes } from '../../type/shop'
-import { sortClothes } from '../../type/shop'
+import { categorySort } from '../../type/filter'
 import { createSelector } from 'reselect'
 import { RootState } from './index'
 
@@ -33,10 +33,10 @@ export const selectClothes = (state: RootState) => state.clothes.items;
 export const selectLoading = (state: RootState) => state.clothes.loading;
 export const selectError = (state: RootState) => state.clothes.error;
 export const selectGender = (state: RootState) => state.clothes.gender;
-export const selectTotalPage = (state: RootState) => state.clothes.clothesPerPage * state.clothes.currentPage;export const selecCtlothesById = (state: RootState, id: number) => {
+export const selectTotalPage = (state: RootState) => state.clothes.clothesPerPage * state.clothes.currentPage;
+export const selecCtlothesById = (state: RootState, id: number) => {
     return state.clothes.items.find((item) => item.id === id)
 }
-
 
 
 export const selectSearchClothes = createSelector(
@@ -101,10 +101,10 @@ export const selectSortClothes = createSelector(
     (paginationClothes, sort) => {
         const newList = [...paginationClothes]
         switch (sort) {
-            case sortClothes.popular: return paginationClothes
-            case sortClothes.increase:
+            case categorySort.popular: return paginationClothes
+            case categorySort.increase:
                 return newList.sort((a, b) => a.price - b.price)
-            case sortClothes.decrease:
+            case categorySort.decrease:
                 return newList.sort((a, b) => b.price - a.price)
             default: return paginationClothes
         }

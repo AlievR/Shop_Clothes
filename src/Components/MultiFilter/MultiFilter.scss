@@ -4,33 +4,44 @@
     width: 100%;
     box-shadow: RGB(0 0 0 / 25%) 0 1px 8px;
 
-    &__items{
-        padding: 10px;
-    }
     &__item{
         list-style-type: none;
         width: 100%;
         background-color: #fff;;
-        border-radius: 5px;
-        padding: 11px;
+        padding: 10px;
         display: block;
-        height: 44px;
         cursor: pointer;
-        border: 1px solid;
-
         &:not(:last-child){
             margin: 0 0 8px;
         }
-
         &:hover{
             background-color: #0770cf;
             color: #fff;
         }
     }
+
+    &__name{
+        padding-left: 30px;
+    }
+
+    &__box{
+        background-position: center;
+        background-size: 24px;
+        content: "";
+        height: 24px;
+        width: 24px;
+        background: url('../../Image//1.svg');
+        background-repeat: no-repeat;
+        position: absolute;
+    }
 }
 
 
-.active-flter{
+.active-item{
     background-color: #0770cf;
     color: #fff;
+}
+
+.active-box{
+    background: url('../../Image//2.svg');
 }

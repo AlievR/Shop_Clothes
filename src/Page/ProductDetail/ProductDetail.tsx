@@ -1,39 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React  from 'react'
 import { useParams } from 'react-router-dom'
-import { IlistClothes } from '../../type/shop'
 import './ProductDetail.scss'
 import ButtonDrop from '../../Components/ButtonDrop/ButtonDrop'
 import {categories} from '../../static'
+import {RootState} from '../../redux/reducers'
+import { selecCtlothesById } from '../../redux/reducers/clothes'
+import { useSelector } from 'react-redux'
 
 const ProductDetail: React.FC = () => {
 
-    
-
-    const template = {
-        id: 0,
-        name: '',
-        price: 0,
-        size: [],
-        color: '',
-        img_main: '',
-        img_card1: '',
-        img_card2: '',
-    }
-
-    const [items, setItems] = useState<IlistClothes>(template)
-
     const { id } = useParams<{ id: string }>()
-
-    useEffect(() => {
-        async function fetchMyAPI() {
-            let response = await axios.get<IlistClothes>(`http://localhost:3001/man-clothes/${id}`)
-            setItems(response.data)
-        }
-        fetchMyAPI()
-    }, [])
-
-    const { name, price, color, size, img_card1, img_card2 } = items
+    const {name, price, color, img_card1, img_card2 } = 
+    useSelector((state: RootState) => selecCtlothesById(state, Number(id))) || {}
 
 
     return (

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,9 +12,9 @@ import Main from './Page/Main/Main';
 import ProductDetail from './Page/ProductDetail/ProductDetail';
 
 const App: React.FC = () => {
-  
+
+
   return (
-    
     <Router>
       <Header />
       <Switch>

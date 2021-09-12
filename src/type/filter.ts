@@ -10,9 +10,38 @@ export enum categoryActionTypes {
     SIZE_CATEGORY = "category/sizeCategory",
     COLOR_CATEGORY = "category/colorCategory",
     SORT_CATEGORY = "category/sortCategory",
-    SEARCH_CATEGORY = "category/searchCategory"
+    SEARCH_CATEGORY = "category/searchCategory",
+    CLEAR_CATEGORY = "ategory/clearCategory"
 }
 
+export enum category {
+    sort = "sort",
+    size = "size",
+    color = "color"
+}
+
+export enum categorySort {
+    popular = "popular",
+    increase = "increase",
+    decrease = "decrease",
+}
+
+export enum categoryColor {
+    white = "white",
+    black = "black",
+    blue = "blue",
+    beige = "beige",
+    green = "green",
+    brown = "brown"
+}
+
+export enum categorySize {
+    xs = "xs",
+    s = "s",
+    m = "m",
+    l = "l",
+    xl = "xl"
+}
 
 interface IsizeCategoryAction {
     type: categoryActionTypes.SIZE_CATEGORY,
@@ -35,9 +64,11 @@ interface IsearchCategoryAction {
     payload: string
 }
 
-
+interface IclearCategoryAction {
+    type: categoryActionTypes.CLEAR_CATEGORY
+}
 
 
 export type IfiltersAction = IsizeCategoryAction 
 | IcolorCategoryAction | IsortCategoryAction 
-| IsearchCategoryAction 
+| IsearchCategoryAction | IclearCategoryAction

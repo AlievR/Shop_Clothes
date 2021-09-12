@@ -172,8 +172,8 @@
      "size":  ["xs", "s"],
       "color" : "white",
       "img_main": "http://127.0.0.1/woman/model0.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/mode0-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/mode0-2.jpg"
+      "img_card1": "http://127.0.0.1/woman/detail/model0-1.jpg",
+      "img_card2": "http://127.0.0.1/woman/detail/model0-2.jpg"
     },
     {
       "id": 1,

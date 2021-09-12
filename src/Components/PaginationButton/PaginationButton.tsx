@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './PaginationButton.scss'
 import { paginationClothes } from '../../redux/actions/clothes'
-import { selectFilters } from '../../redux/reducers/filters'
 import { fillArrayPagination, selectClothesLength, 
 selectTotalPage} from '../../redux/reducers/clothes'
 
@@ -10,16 +9,9 @@ const PaginationButton: React.FC = () => {
     const dispatch = useDispatch()
 
     const pageNumbers = useSelector(fillArrayPagination)
-    const filters = useSelector(selectFilters)
     const clothesTotalPage = useSelector(selectTotalPage)
     const lengthClothes = useSelector(selectClothesLength)
 
-    useEffect(() => {
-        function defaultCurrent() {
-            dispatch(paginationClothes(1))
-        }
-        defaultCurrent()
-    }, [filters, dispatch])
 
 
     const handleClickPagination = () => {

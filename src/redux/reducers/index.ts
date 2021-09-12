@@ -6,4 +6,6 @@ export const rootReducer = combineReducers({
     clothes, filters
 });
 
+
+
 export type RootState = ReturnType<typeof rootReducer>

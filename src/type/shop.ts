@@ -68,19 +68,6 @@ export interface IpaginationComponent {
     lengthClothes: number
 }
 
-export enum categoryClothes {
-    sort = "sort",
-    size = "size",
-    color = "color",
-    price = "price"
-}
-
-export enum sortClothes {
-    popular = "popular",
-    increase = "increase",
-    decrease = "decrease",
-}
-
 export enum clothesActionTypes {
     FETCH_CLOTHES = "clothes/clothesFetch",
     LOADING_CLOTHES = "clothes/clothesLoading",

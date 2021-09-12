@@ -1,10 +1,20 @@
 import React from 'react'
 import ButtonDrop from '../ButtonDrop/ButtonDrop'
+import { useDispatch } from 'react-redux'
 import { categories } from '../../static'
 import './Categories.scss'
+import {clearCategory} from '../../redux/actions/filters'
 
 
 const Categories: React.FC = () => {
+
+    const dispatch = useDispatch()
+
+
+    const handleClickClear = () => {
+        dispatch(clearCategory())
+    }
+
     return (
         <div className="app-categories">
             <ul className="app-categories__items">
@@ -21,10 +31,10 @@ const Categories: React.FC = () => {
                     })
                 }
                 <li className="app-categories__item">
-                    <button className="app-categories__delete-filters">
-                        <span>
-                           Очистить фильтры
-                        </span>
+                    <button className="app-categories__delete-filters"
+                    onClick={handleClickClear}
+                    >
+                        <span>Очистить фильтры</span>
                     </button>
                 </li>
             </ul>
