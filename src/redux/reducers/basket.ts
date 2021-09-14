@@ -12,7 +12,38 @@ const initialState: IbasketState = {
 const updateOrder = (state: IbasketState, payload: IbasketPayload, quanity: number) => {
     const { id, size } = payload;
     const itemIndex = state.items.findIndex((item) => item.id === id)
-    
+    if (itemIndex < 0) {
+        const itemsClothes = store.getState().clothes.items
+        const item = itemsClothes.find((item) => item.id === Number(id)) 
+        const newItem :IbasketItems = {
+            id: id + size,
+            name: item!.name,
+            price: item!.price,
+            size : size,
+            color : item!.color,
+            img_main: item!.img_main,
+            count: 1,
+            totalPrice: item!.price,
+        }
+        return {
+            ...state,
+            items: [...state.items, newItem]
+        }
+    } else {
+        return {
+            ...state,
+            items: state.items.map((item) => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        count: item.count + quanity,
+                        totalPrice: item.totalPrice + quanity 
+                    }
+                }
+                return item
+            })
+        }
+    }
 }
 
 

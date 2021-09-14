@@ -29,7 +29,7 @@ const ProductDetail: React.FC = () => {
             }
             dispatch(addItemBasket(selectItem))
         }
-    }
+}
 
     return (
         <main className="app-product-detail">
