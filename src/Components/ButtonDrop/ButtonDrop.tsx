@@ -2,11 +2,11 @@ import React from 'react'
 import { useComponentVisible } from '../../hook/useComponentVisible.js'
 import { IbuttonDropComponent } from '../../type/shop'
 import './ButtonDrop.scss'
-import MultiFilter from '../../Components/MultiFilter/MultiFilter'
 
-const ButtonDrop: React.FC<IbuttonDropComponent> = ({ items }, children: React.ReactNode) => {
 
-    const { label, nameCategory, options } = items
+
+
+const ButtonDrop: React.FC<IbuttonDropComponent> = ({ label, children }) => {
 
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false)
 
@@ -32,7 +32,10 @@ const ButtonDrop: React.FC<IbuttonDropComponent> = ({ items }, children: React.R
                 isComponentVisible && (
                     <div className="app-button-drop__active-filter">
                         <ul className="app-multi-filter__items">
-                            <MultiFilter nameCategory={nameCategory} options={options} />
+                            {
+                              React.isValidElement(children) &&  
+                              React.cloneElement(children, {setIsComponentVisible: setIsComponentVisible})
+                            }
                         </ul>
                     </div>
                 )}

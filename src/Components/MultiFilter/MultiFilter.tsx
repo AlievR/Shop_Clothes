@@ -7,21 +7,23 @@ import { selectOptionsCategory } from '../../redux/reducers/filters'
 import { RootState } from '../../redux/reducers'
 
 
-const MultiFilter: React.FC<ImultiFilterComponent> = ({ nameCategory, options }) => {
+const MultiFilter: React.FC<ImultiFilterComponent> = ({ items }) => {
+
+    const { nameCategory, options } = items
 
     const activeOpt = useSelector((state: RootState) => selectOptionsCategory(state, nameCategory))
 
     const dispatch = useDispatch()
 
     const handleClickActiveFilter = (value: string) => {
-        dispatch(dispatchCategory(nameCategory,value))
+        dispatch(dispatchCategory(nameCategory, value))
     }
 
     const renderFilterItems = options.map((opt) => {
         const { id, value, name } = opt
         let classNameItem = "app-multi-filter__item"
         let classNameBox = "app-multi-filter__box"
-        if (activeOpt.includes(name)){
+        if (activeOpt.includes(name)) {
             classNameItem += " active-item"
             classNameBox += " active-box"
         }
@@ -34,7 +36,7 @@ const MultiFilter: React.FC<ImultiFilterComponent> = ({ nameCategory, options })
             </li>
         )
     })
-    
+
 
     return (
         <>

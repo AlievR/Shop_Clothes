@@ -10,6 +10,7 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import Main from './Page/Main/Main';
 import ProductDetail from './Page/ProductDetail/ProductDetail';
+import Basket from './Page/Basket/Basket';
 
 const App: React.FC = () => {
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/" component={Main} exact/>
         <Route path="/woman" component={Main} exact/>
         <Route path="/product-detail/:id" component={ProductDetail} />
+        <Route path="/basket" component={Basket} exact/>
       </Switch>
       <Footer />
     </Router>

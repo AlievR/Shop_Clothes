@@ -1,4 +1,4 @@
-import { IclothesState, IclothesAction, clothesActionTypes } from '../../type/shop'
+import { IclothesState, IclothesAction, clothesActionTypes, IlistClothes } from '../../type/shop'
 import { categorySort } from '../../type/filter'
 import { createSelector } from 'reselect'
 import { RootState } from './index'
@@ -35,7 +35,17 @@ export const selectError = (state: RootState) => state.clothes.error;
 export const selectGender = (state: RootState) => state.clothes.gender;
 export const selectTotalPage = (state: RootState) => state.clothes.clothesPerPage * state.clothes.currentPage;
 export const selecCtlothesById = (state: RootState, id: number) => {
-    return state.clothes.items.find((item) => item.id === id)
+    const template : IlistClothes = {
+        id: 0,
+        name: '',
+        price: 0,
+        size: [],
+        color: '',
+        img_main: '',
+        img_card1: '',
+        img_card2: '',
+    }
+    return state.clothes.items.find((item) => item.id === id) || template
 }
 
 

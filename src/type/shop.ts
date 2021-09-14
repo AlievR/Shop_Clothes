@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IgenderClothes {
     id: number,
     value: string,
@@ -36,7 +38,6 @@ export interface IclothesItemComponent {
 
 interface IbuttonProps {
     nameCategory: string,
-    label: string,
     options: IcategoryPosition[]
 }
 
@@ -47,12 +48,11 @@ interface ImuiltiProps {
 
 
 export interface IbuttonDropComponent {
-    items: IbuttonProps
+    label: string
 }
 
 export interface ImultiFilterComponent {
-    nameCategory: string,
-    options: IcategoryPosition[]
+    items: IbuttonProps
 }
 
 export interface IcategoryComponent {
@@ -60,7 +60,10 @@ export interface IcategoryComponent {
 }
 
 export interface IsectionComponent {
-    options: IcategoryPosition[]
+    sizes: string[],
+    activeSize: string,
+    handleClickActiveSize: (selectedSize: string) => void,
+    setIsComponentVisible ?: Dispatch<SetStateAction<boolean>> 
 }
 
 export interface IpaginationComponent {

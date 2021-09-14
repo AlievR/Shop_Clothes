@@ -35,7 +35,7 @@ const Header: React.FC = () => {
                             <li className="app-header__nav-item">
                                 <Link
                                     className="app-header__nav-link"
-                                    to="/">
+                                    to="/basket">
                                     <span className="app-header__nav-icon-basket" />
                                 </Link>
                             </li>
