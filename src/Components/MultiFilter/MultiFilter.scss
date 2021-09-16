@@ -9,7 +9,8 @@
         width: 100%;
         background-color: #fff;;
         padding: 10px;
-        display: block;
+        display: flex;
+        align-items: center;
         cursor: pointer;
         font-family: 'Montserrat', sans-serif;
         &:not(:last-child){

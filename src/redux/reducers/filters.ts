@@ -49,7 +49,6 @@ export const filters = (state = initialState, action: IfiltersAction): Icategory
 export const selectFilters = createSelector(
     (state: RootState) => state.filters,
     (filters) => {
-        console.log(filters)
         return filters;
     }
 )

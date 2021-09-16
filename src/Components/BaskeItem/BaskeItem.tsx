@@ -5,8 +5,8 @@ import './BaskeItem.scss'
 import { IbasketItemComponent } from '../../type/basket'
 import { selectBasketById } from '../../redux/reducers/basket'
 import { RootState } from '../../redux/reducers'
-import { addItemBasket, minusItemBasket } from '../../redux/actions/basket'
-import { IbasketPayload } from '../../type/basket'
+import { IbasketPayload, basketActionButton } from '../../type/basket'
+import { actionBasket } from '../../redux/actions/basket'
 
 
 
@@ -14,25 +14,17 @@ const BaskeItem: React.FC<IbasketItemComponent> = ({ id }) => {
 
     const dispatch = useDispatch()
 
-    const { name, size, price, color, img_main, count, totalPrice } = useSelector((state: RootState) => selectBasketById(state, id)) || {}
+    const { name, price, size, color, img_main, count, totalPrice } = useSelector((state: RootState) => selectBasketById(state, id)) || {}
 
-    const handleClickAddItem = () => {
+    const handleClickActionItem = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const action = e.currentTarget.name
         if (size !== undefined) {
             const selectItem: IbasketPayload = {
-                id: id,
-                size: size
+                id: id ,
+                size: size,
+                action: action
             }
-            dispatch(addItemBasket(selectItem))
-        }
-    }
-
-    const handleClickMinusItem = () => {
-        if (size !== undefined) {
-            const selectItem: IbasketPayload = {
-                id: id,
-                size: size
-            }
-            dispatch(minusItemBasket(selectItem))
+            dispatch(actionBasket(selectItem))
         }
     }
 
@@ -58,13 +50,15 @@ const BaskeItem: React.FC<IbasketItemComponent> = ({ id }) => {
                 <span className="app-basket-item__info-price"> {price} руб. </span>
                 <div className="app-basket-item__counter">
                     <button className="app-basket-item__counter-btn"
-                        onClick={handleClickAddItem}
+                        name={basketActionButton.minus}
+                        onClick={handleClickActionItem}
                     >
                         <span className="app-basket-item__counter-btn-minus" />
                     </button>
                     <span className="app-basket-item__counter-count" > {count}</span>
                     <button className="app-basket-item__counter-btn"
-                    onClick={handleClickMinusItem}
+                       name={basketActionButton.plus}
+                        onClick={handleClickActionItem}
                     >
                         <span className="app-basket-item__counter-btn-plus" />
                     </button>
@@ -72,7 +66,10 @@ const BaskeItem: React.FC<IbasketItemComponent> = ({ id }) => {
             </div>
 
             <div className="app-basket-item__sovl">
-                <button className="app-basket-item__sovl-btn">
+                <button className="app-basket-item__sovl-btn"
+                    name={basketActionButton.delete}
+                    onClick={handleClickActionItem}
+                >
                     <span className="app-basket-item__sovl-trash" />
                 </button>
                 <span className="app-basket-item__sovl-price"> {totalPrice} руб. </span>

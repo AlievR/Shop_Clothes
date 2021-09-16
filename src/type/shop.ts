@@ -32,6 +32,8 @@ export interface IlistClothes {
     img_card2 : string,
 }
 
+
+
 export interface IclothesItemComponent {
     id: number
 }

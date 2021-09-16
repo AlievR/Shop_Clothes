@@ -6,12 +6,14 @@ import { RootState } from '../../redux/reducers'
 import { selecCtlothesById } from '../../redux/reducers/clothes'
 import { useSelector, useDispatch } from 'react-redux'
 import Select from '../../Components/Select/Select'
-import { IbasketPayload } from '../../type/basket'
-import { addItemBasket } from '../../redux/actions/basket'
+import { IbasketPayload, basketActionButton } from '../../type/basket'
+import { actionBasket } from '../../redux/actions/basket'
 
 const ProductDetail: React.FC = () => {
 
     const dispatch = useDispatch()
+
+
     const { id } = useParams<{ id: string }>()
     const { name, price, color, size, img_card1, img_card2 } =
         useSelector((state: RootState) => selecCtlothesById(state, Number(id)))
@@ -21,15 +23,17 @@ const ProductDetail: React.FC = () => {
         setActiveSize(selectedSize)
     }
 
-    const handleClickAddClothes = () => {
-        if (size !== undefined) {
-            const selectItem: IbasketPayload = {
-                id: id,
-                size: activeSize
-            }
-            dispatch(addItemBasket(selectItem))
+    const handleClickAddClothes = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const action = e.currentTarget.name
+        const selectItem: IbasketPayload = {
+            id: id + activeSize,
+            size: activeSize,
+            action: action
         }
-}
+        dispatch(actionBasket(selectItem))
+    }
+
+
 
     return (
         <main className="app-product-detail">
@@ -61,7 +65,8 @@ const ProductDetail: React.FC = () => {
                                 />
                             </ButtonDrop>
                             <button className="app-product-detail__add-btn"
-                                onClick={handleClickAddClothes}
+                                 name={basketActionButton.plus}
+                                 onClick={handleClickAddClothes}
                             >
                                 Добавить в корзину
                             </button>
