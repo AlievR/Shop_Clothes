@@ -12,7 +12,7 @@ const ButtonDrop: React.FC<IbuttonDropComponent> = ({ label, children }) => {
 
     const handleClickActiveFilter = () => setIsComponentVisible((state: boolean) => !state)
 
-    let className = "app-categories__arrow"
+    let className = "app-button-drop__arrow"
     if (isComponentVisible === true) {
         className += " active-drop"
     }

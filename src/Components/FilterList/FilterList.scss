@@ -1,4 +1,4 @@
-.app-categories{
+.app-filter-list{
     margin-bottom: 30px;
     &__items{
         display: flex;
@@ -11,17 +11,6 @@
         &:last-child{
             margin-right: 0;
         }
-    }
-
-    &__arrow{
-        position: absolute;
-        top: 37%;
-        right: 8%;
-        border: solid black;
-        border-width: 0 1px 1px 0;
-        display: inline-block;
-        padding: 3px;
-        transform: rotate(45deg);
     }
 
     &__delete-filters{
@@ -73,9 +62,4 @@
         }
     }
 
-}
-
-.active-drop{
-    top: 50%;
-    transform: rotate(223deg);
 }

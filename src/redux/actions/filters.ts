@@ -1,43 +1,39 @@
-import { IfiltersAction, categoryActionTypes, category } from '../../type/filter'
+import { IfiltersAction, filtersActionTypes } from '../../type/filter'
 
 
-export const dispatchCategory = (nameCategory: string, value: string) => {
-    switch (nameCategory) {
-        case category.size:
-            return sizeCategory(value)
-        case category.color:
-            return colorCategory(value)
-        case category.sort:
-            return sortCategory(value)
-    }
-}
 
-const sizeCategory = (size: string): IfiltersAction => ({
-    type: categoryActionTypes.SIZE_CATEGORY,
+export const sizeFilters = (size: string): IfiltersAction => ({
+    type: filtersActionTypes.SIZE_FILTERS,
     payload: size
 })
 
 
-const colorCategory = (color: string): IfiltersAction => ({
-    type: categoryActionTypes.COLOR_CATEGORY,
+export const colorFilters = (color: string): IfiltersAction => ({
+    type: filtersActionTypes.COLOR_FILTERS,
     payload: color
 })
 
-const sortCategory = (sort: string): IfiltersAction => ({
-    type: categoryActionTypes.SORT_CATEGORY,
+export const sortFilters = (sort: string): IfiltersAction => ({
+    type: filtersActionTypes.SORT_FILTERS,
     payload: sort
 })
 
 
-export const searchCategory = (term: string): IfiltersAction => ({
-    type: categoryActionTypes.SEARCH_CATEGORY,
+export const searchFilters = (term: string): IfiltersAction => ({
+    type: filtersActionTypes.SEARCH_FILTERS,
     payload: term
 })
 
 
-export const clearCategory = (): IfiltersAction => ({
-    type: categoryActionTypes.CLEAR_CATEGORY
+export const clearFilters = (): IfiltersAction => ({
+    type: filtersActionTypes.CLEAR_FILTERS
 })
+
+export const paginationClothes = (currentPage: number) => ({
+    type: filtersActionTypes.PAGINATION,
+    payload: currentPage
+})
+
 
 
 

@@ -7,20 +7,6 @@ export interface IgenderClothes {
 }
 
 
-export interface IcategoryPosition {
-    id: number,
-    name: string
-    value: string
-}
-
-export interface Icategories {
-    id: number,
-    nameCategory: string,
-    label: string,
-    options: IcategoryPosition[]
-}
-
-
 export interface IlistClothes {
     id : number,
     name : string,
@@ -33,32 +19,13 @@ export interface IlistClothes {
 }
 
 
-
 export interface IclothesItemComponent {
     id: number
-}
-
-interface IbuttonProps {
-    nameCategory: string,
-    options: IcategoryPosition[]
-}
-
-interface ImuiltiProps {
-    nameCategory: string,
-    options: IcategoryPosition[]
 }
 
 
 export interface IbuttonDropComponent {
     label: string
-}
-
-export interface ImultiFilterComponent {
-    items: IbuttonProps
-}
-
-export interface IcategoryComponent {
-    options: ImuiltiProps
 }
 
 export interface IsectionComponent {
@@ -77,17 +44,14 @@ export enum clothesActionTypes {
     FETCH_CLOTHES = "clothes/clothesFetch",
     LOADING_CLOTHES = "clothes/clothesLoading",
     ERROR_CLOTHES = "clothes/clothesError",
-    GENDER_CLOTHES = "clothes/clothesGender",
-    PAGINATION_CLOTHES= "clothes/clothesPagination"
+    GENDER_CLOTHES = "clothes/clothesGender"
 }
 
 export interface IclothesState {
     items: IlistClothes[],
     loading: boolean,
     error: null | string,
-    gender: string,
-    currentPage: number,
-    clothesPerPage: number,
+    gender: string
 }
 
 interface IfetchClothesAction {
@@ -110,11 +74,6 @@ interface IgenderClothesAction {
     payload: string
 }
 
-interface IpaginationClothesAction {
-    type: clothesActionTypes.PAGINATION_CLOTHES,
-    payload: number
-}
-
 
 export type IclothesAction = IfetchClothesAction | IloadingClothesAction 
-| IerrorClothesAction | IgenderClothesAction | IpaginationClothesAction
+| IerrorClothesAction | IgenderClothesAction

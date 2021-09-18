@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Select from '../../Components/Select/Select'
 import { IbasketPayload, basketActionButton } from '../../type/basket'
 import { actionBasket } from '../../redux/actions/basket'
+import {IlistClothes} from '../../type/shop'
 
 const ProductDetail: React.FC = () => {
 
@@ -16,7 +17,7 @@ const ProductDetail: React.FC = () => {
 
     const { id } = useParams<{ id: string }>()
     const { name, price, color, size, img_card1, img_card2 } =
-        useSelector((state: RootState) => selecCtlothesById(state, Number(id)))
+    useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
     const [activeSize, setActiveSize] = useState('Выбрать размер')
 
     const handleClickActiveSize = (selectedSize: string) => {

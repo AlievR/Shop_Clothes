@@ -1,17 +1,20 @@
-import { IcategoryState, categoryActionTypes, IfiltersAction } from '../../type/filter'
+import { IfiltersState, filtersActionTypes, IfiltersAction } from '../../type/filter'
 import { RootState } from './index'
 import { createSelector } from 'reselect'
+import {selectClothesLength} from './clothes'
 
-const initialState: IcategoryState = {
+const initialState: IfiltersState = {
     sizes: [],
     colors: [],
     sort: "popular",
-    search: ''
+    search: '',
+    currentPage: 1,
+    clothesPerPage: 8,
 }
 
-export const filters = (state = initialState, action: IfiltersAction): IcategoryState => {
+export const filters = (state = initialState, action: IfiltersAction): IfiltersState => {
     switch (action.type) {
-        case categoryActionTypes.SIZE_CATEGORY:
+        case filtersActionTypes.SIZE_FILTERS:
             const { sizes } = state
             if (sizes.includes(action.payload)) {
                 return {
@@ -21,9 +24,10 @@ export const filters = (state = initialState, action: IfiltersAction): Icategory
             }
             return {
                 ...state,
-                sizes: [...state.sizes, action.payload]
+                sizes: [...state.sizes, action.payload],
+                currentPage: 1
             }
-        case categoryActionTypes.COLOR_CATEGORY:
+        case filtersActionTypes.COLOR_FILTERS:
             const { colors } = state
             if (colors.includes(action.payload)) {
                 return {
@@ -33,14 +37,17 @@ export const filters = (state = initialState, action: IfiltersAction): Icategory
             }
             return {
                 ...state,
-                colors: [...state.colors, action.payload]
+                colors: [...state.colors, action.payload],
+                currentPage: 1
             }
-        case categoryActionTypes.SORT_CATEGORY:
-            return { ...state, sort: action.payload }
-        case categoryActionTypes.SEARCH_CATEGORY:
-            return { ...state, search: action.payload }
-        case categoryActionTypes.CLEAR_CATEGORY:
-            return { ...state, sizes: [], colors: [], sort: "popular", search: '' }
+        case filtersActionTypes.SORT_FILTERS:
+            return { ...state, sort: action.payload,currentPage: 1 }
+        case filtersActionTypes.SEARCH_FILTERS:
+            return { ...state, search: action.payload, currentPage: 1 }
+        case filtersActionTypes.CLEAR_FILTERS:
+            return { ...state, sizes: [], colors: [], sort: "popular", search: '', currentPage: 1 }
+        case filtersActionTypes.PAGINATION:
+            return { ...state, currentPage: action.payload }
         default:
             return state
     }
@@ -53,8 +60,19 @@ export const selectFilters = createSelector(
     }
 )
 
+export const selectTotalPage = (state: RootState) => state.filters.clothesPerPage * state.filters.currentPage;
+
+export const fillArrayPagination = createSelector(
+    selectClothesLength,
+    (state: RootState) => state.filters.clothesPerPage,
+    (ClothesLength, clothesPerPage) => {
+        const currentPage = Math.ceil(ClothesLength / clothesPerPage)
+        return currentPage;
+    }
+)
 
 export const selectOptionsCategory = (state: RootState, name: string) => {
+
     const { sizes, colors, sort } = state.filters
     switch (name) {
         case 'size': return sizes
@@ -62,6 +80,7 @@ export const selectOptionsCategory = (state: RootState, name: string) => {
         case 'sort': return sort
         default: return []
     }
+
 }
 
 export const selectSort = (state: RootState) => state.filters.sort;

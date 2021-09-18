@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { searchCategory } from '../../redux/actions/filters'
+import { searchFilters } from '../../redux/actions/filters'
 import './SearchBar.scss'
 
 const SearchBar: React.FC = () => {
@@ -14,7 +14,7 @@ const SearchBar: React.FC = () => {
     }
 
     const handleSubmit = (e: React.FormEvent) => {
-        dispatch(searchCategory(term))
+        dispatch(searchFilters(term))
         setTerm('')
         e.preventDefault()
     }

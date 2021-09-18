@@ -5,10 +5,12 @@ import './ClotheCard.scss'
 import { selecCtlothesById } from '../../redux/reducers/clothes'
 import { IclothesItemComponent } from '../../type/shop'
 import {RootState} from '../../redux/reducers'
+import {IlistClothes} from '../../type/shop'
 
 const ClotheCard: React.FC<IclothesItemComponent> = ({ id }) => {
 
-    const {name, img_main, price} = useSelector((state: RootState) => selecCtlothesById(state,id)) || {}
+    const {name, img_main, price} = useSelector((state: RootState) => 
+    selecCtlothesById(state,id))  as IlistClothes
 
     const path = `/product-detail/${id}`
 

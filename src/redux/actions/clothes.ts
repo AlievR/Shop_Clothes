@@ -33,11 +33,3 @@ export const genderClothes = (gender: string): IclothesAction => ({
     type: clothesActionTypes.GENDER_CLOTHES,
     payload: gender
 })
-
-
-
-export const paginationClothes = (currentPage: number) => ({
-    type: clothesActionTypes.PAGINATION_CLOTHES,
-    payload: currentPage
-})
-

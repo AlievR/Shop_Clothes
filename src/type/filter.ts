@@ -1,32 +1,61 @@
-export interface IcategoryState {
+export interface IfilterPosition {
+    id: number,
+    name: string
+    value: string
+}
+
+export interface IfiltersItem {
+    id: number,
+    nameFilter: string,
+    label: string,
+    options: IfilterPosition[]
+}
+
+
+interface IfilterProps {
+    nameFilter: string,
+    options: IfilterPosition[]
+}
+
+
+export interface IfilterListItemComponent {
+    items: IfilterProps,
+    handleClickActiveFilter: (nameFilter: string, payload: string) => void
+}
+
+
+export interface IfiltersState {
     sizes: string[],
     colors: string[],
     sort: string,
-    search: string
+    search: string,
+    currentPage: number,
+    clothesPerPage: number,
 }
 
 
-export enum categoryActionTypes {
-    SIZE_CATEGORY = "category/sizeCategory",
-    COLOR_CATEGORY = "category/colorCategory",
-    SORT_CATEGORY = "category/sortCategory",
-    SEARCH_CATEGORY = "category/searchCategory",
-    CLEAR_CATEGORY = "ategory/clearCategory"
+export enum filtersActionTypes {
+    SIZE_FILTERS = "filters/sizeFilters",
+    COLOR_FILTERS = "filters/colorFilters",
+    SORT_FILTERS = "filters/sortFilters",
+    SEARCH_FILTERS = "filters/searchFilters",
+    CLEAR_FILTERS = "filters/clearFilters",
+    PAGINATION= "clothes/Pagination"
 }
 
-export enum category {
+export enum filtersType {
     sort = "sort",
     size = "size",
     color = "color"
 }
 
-export enum categorySort {
+export enum sortType {
     popular = "popular",
     increase = "increase",
     decrease = "decrease",
 }
 
-export enum categoryColor {
+export enum colorType {
     white = "white",
     black = "black",
     blue = "blue",
@@ -35,7 +64,7 @@ export enum categoryColor {
     brown = "brown"
 }
 
-export enum categorySize {
+export enum sizeType {
     xs = "xs",
     s = "s",
     m = "m",
@@ -43,32 +72,38 @@ export enum categorySize {
     xl = "xl"
 }
 
-interface IsizeCategoryAction {
-    type: categoryActionTypes.SIZE_CATEGORY,
+interface IsizeFiltersAction {
+    type: filtersActionTypes.SIZE_FILTERS,
     payload: string
 }
 
 
-interface IcolorCategoryAction {
-    type: categoryActionTypes.COLOR_CATEGORY,
+interface IcolorFiltersAction {
+    type: filtersActionTypes.COLOR_FILTERS,
     payload: string
 }
 
-interface IsortCategoryAction {
-    type: categoryActionTypes.SORT_CATEGORY,
+interface IsortFiltersAction {
+    type: filtersActionTypes.SORT_FILTERS,
     payload: string
 }
 
-interface IsearchCategoryAction {
-    type: categoryActionTypes.SEARCH_CATEGORY,
+interface IsearchFiltersAction {
+    type: filtersActionTypes.SEARCH_FILTERS,
     payload: string
 }
 
-interface IclearCategoryAction {
-    type: categoryActionTypes.CLEAR_CATEGORY
+interface IclearFiltersAction {
+    type: filtersActionTypes.CLEAR_FILTERS
 }
 
 
-export type IfiltersAction = IsizeCategoryAction 
-| IcolorCategoryAction | IsortCategoryAction 
-| IsearchCategoryAction | IclearCategoryAction
+interface IpaginationAction {
+    type: filtersActionTypes.PAGINATION,
+    payload: number
+}
+
+
+
+export type IfiltersAction = IsizeFiltersAction | IcolorFiltersAction 
+| IsortFiltersAction | IsearchFiltersAction | IclearFiltersAction | IpaginationAction

@@ -1,5 +1,5 @@
-import { IclothesState, IclothesAction, clothesActionTypes, IlistClothes } from '../../type/shop'
-import { categorySort } from '../../type/filter'
+import { IclothesState, IclothesAction, clothesActionTypes } from '../../type/shop'
+import { sortType } from '../../type/filter'
 import { createSelector } from 'reselect'
 import { RootState } from './index'
 
@@ -7,9 +7,7 @@ const initialState: IclothesState = {
     items: [],
     loading: false,
     error: null,
-    gender: "man",
-    currentPage: 1,
-    clothesPerPage: 8,
+    gender: "man"
 }
 
 export const clothes = (state = initialState, action: IclothesAction): IclothesState => {
@@ -22,8 +20,6 @@ export const clothes = (state = initialState, action: IclothesAction): IclothesS
             return { ...state, error: action.payload }
         case clothesActionTypes.GENDER_CLOTHES:
             return { ...state, gender: action.payload }
-        case clothesActionTypes.PAGINATION_CLOTHES:
-            return { ...state, currentPage: action.payload }
         default:
             return state
     }
@@ -33,19 +29,8 @@ export const selectClothes = (state: RootState) => state.clothes.items;
 export const selectLoading = (state: RootState) => state.clothes.loading;
 export const selectError = (state: RootState) => state.clothes.error;
 export const selectGender = (state: RootState) => state.clothes.gender;
-export const selectTotalPage = (state: RootState) => state.clothes.clothesPerPage * state.clothes.currentPage;
 export const selecCtlothesById = (state: RootState, id: number) => {
-    const template : IlistClothes = {
-        id: 0,
-        name: '',
-        price: 0,
-        size: [],
-        color: '',
-        img_main: '',
-        img_card1: '',
-        img_card2: '',
-    }
-    return state.clothes.items.find((item) => item.id === id) || template
+    return state.clothes.items.find((item) => item.id === id)
 }
 
 
@@ -85,19 +70,10 @@ export const selectClothesLength = createSelector(
 );
 
 
-export const fillArrayPagination = createSelector(
-    selectClothesLength,
-    (state: RootState) => state.clothes.clothesPerPage,
-    (ClothesLength, clothesPerPage) => {
-        const currentPage = Math.ceil(ClothesLength / clothesPerPage)
-        return currentPage;
-    }
-)
-
 export const selectPaginationClothes = createSelector(
     selectFilteredClothes,
-    (state: RootState) => state.clothes.currentPage,
-    (state: RootState) => state.clothes.clothesPerPage,
+    (state: RootState) => state.filters.currentPage,
+    (state: RootState) => state.filters.clothesPerPage,
     (filteredClothes, currentPage, clothesPerPage) =>{
         const indexOfLastPost = currentPage * clothesPerPage
         return filteredClothes.slice(0, indexOfLastPost)
@@ -111,10 +87,10 @@ export const selectSortClothes = createSelector(
     (paginationClothes, sort) => {
         const newList = [...paginationClothes]
         switch (sort) {
-            case categorySort.popular: return paginationClothes
-            case categorySort.increase:
+            case sortType.popular: return paginationClothes
+            case sortType.increase:
                 return newList.sort((a, b) => a.price - b.price)
-            case categorySort.decrease:
+            case sortType.decrease:
                 return newList.sort((a, b) => b.price - a.price)
             default: return paginationClothes
         }

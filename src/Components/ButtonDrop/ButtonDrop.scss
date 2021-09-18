@@ -19,6 +19,17 @@
         }
     }
 
+    &__arrow{
+        position: absolute;
+        top: 37%;
+        right: 8%;
+        border: solid black;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+    }
+
     &__active-filter{
         position: absolute;
         z-index: 10;
@@ -27,4 +38,10 @@
         width: 100%;
         box-shadow: RGB(0 0 0 / 25%) 0 1px 8px;
     }
+}
+
+
+.active-drop{
+    top: 50%;
+    transform: rotate(223deg);
 }

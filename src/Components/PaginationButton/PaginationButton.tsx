@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import './PaginationButton.scss'
-import { paginationClothes } from '../../redux/actions/clothes'
-import { fillArrayPagination, selectClothesLength, 
-selectTotalPage} from '../../redux/reducers/clothes'
+import { paginationClothes } from '../../redux/actions/filters'
+import { selectClothesLength} from '../../redux/reducers/clothes'
+import {fillArrayPagination, selectTotalPage} from '../../redux/reducers/filters'
 
 const PaginationButton: React.FC = () => {
     const dispatch = useDispatch()

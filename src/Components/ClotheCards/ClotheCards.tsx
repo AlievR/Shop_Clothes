@@ -1,18 +1,32 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, {useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import './ClotheCards.scss'
 import { selectClothesLength, selectLoading, selectError,
-selectClothesIds} from '../../redux/reducers/clothes'
+selectClothesIds, selectGender} from '../../redux/reducers/clothes'
+import { fetchClothes} from '../../redux/actions/clothes'
+import {clearFilters} from '../../redux/actions/filters'
 import ClotheCard from '../ClotheCard/ClotheCard'
 import SpinnerLoading from '../SpinnerLoading/SpinnerLoading'
-
+import PaginationButton from '../../Components/PaginationButton/PaginationButton'
 
 const ClotheCards: React.FC = () => {
+
+    const dispatch = useDispatch()
 
     const loading = useSelector(selectLoading)
     const error = useSelector(selectError)
     const lengthClothes = useSelector(selectClothesLength)
     const clothesId = useSelector(selectClothesIds)
+    const gender = useSelector(selectGender)
+
+    useEffect(() => {
+        function fetchMyAPI() {
+            dispatch(clearFilters())
+            dispatch(fetchClothes())
+        }
+        fetchMyAPI()
+    }, [gender, dispatch])
+
 
     const renderListClothes = clothesId.map((id) => {
         return <ClotheCard key={id} id={id} />
@@ -24,7 +38,6 @@ const ClotheCards: React.FC = () => {
     return (
         <section className="app-cards-clothes">
             <div className="app-cards-clothes__intro">
-
                 <h2 className="app-cards-clothes__title">
                     {
                           lengthClothes > 0 ? `Найдено ${lengthClothes} моделей`
@@ -35,6 +48,7 @@ const ClotheCards: React.FC = () => {
                     {renderListClothes}
                 </ul>
             </div>
+            {lengthClothes > 0 && <PaginationButton />}
         </section>
     )
 }
