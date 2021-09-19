@@ -5,7 +5,7 @@ import './BaskeItem.scss'
 import { IbasketItemComponent } from '../../type/basket'
 import { selectBasketById } from '../../redux/reducers/basket'
 import { RootState } from '../../redux/reducers'
-import { IbasketPayload, basketActionButton } from '../../type/basket'
+import { IbasketPayload, basketActionButton, IbasketItems } from '../../type/basket'
 import { actionBasket } from '../../redux/actions/basket'
 
 
@@ -14,18 +14,17 @@ const BaskeItem: React.FC<IbasketItemComponent> = ({ id }) => {
 
     const dispatch = useDispatch()
 
-    const { name, price, size, color, img_main, count, totalPrice } = useSelector((state: RootState) => selectBasketById(state, id)) || {}
+    const { name, price, size, color, img_main, count, totalPrice } = useSelector((state: RootState) => selectBasketById(state, id)) as IbasketItems
 
     const handleClickActionItem = (e: React.MouseEvent<HTMLButtonElement>) => {
         const action = e.currentTarget.name
-        if (size !== undefined) {
-            const selectItem: IbasketPayload = {
-                id: id ,
-                size: size,
-                action: action
-            }
-            dispatch(actionBasket(selectItem))
+        const selectItem: IbasketPayload = {
+            id: id,
+            size: size,
+            action: action
         }
+        dispatch(actionBasket(selectItem))
+
     }
 
     return (
@@ -57,7 +56,7 @@ const BaskeItem: React.FC<IbasketItemComponent> = ({ id }) => {
                     </button>
                     <span className="app-basket-item__counter-count" > {count}</span>
                     <button className="app-basket-item__counter-btn"
-                       name={basketActionButton.plus}
+                        name={basketActionButton.plus}
                         onClick={handleClickActionItem}
                     >
                         <span className="app-basket-item__counter-btn-plus" />

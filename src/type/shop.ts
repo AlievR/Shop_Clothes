@@ -23,7 +23,6 @@ export interface IclothesItemComponent {
     id: number
 }
 
-
 export interface IbuttonDropComponent {
     label: string
 }

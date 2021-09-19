@@ -15,8 +15,8 @@ const FilterListItem : React.FC<IfilterListItemComponent> = ({ items, handleClic
 
     const renderFilterItems = options.map((opt) => {
         const { id, value, name } = opt
-        let classNameItem = "app-categories-list__item"
-        let classNameBox = "app-categories-list__box"
+        let classNameItem = "app-list__item"
+        let classNameBox = "app-list__box"
         if (activeOpt.includes(name)) {
             classNameItem += " active-item"
             classNameBox += " active-box"
@@ -26,16 +26,16 @@ const FilterListItem : React.FC<IfilterListItemComponent> = ({ items, handleClic
                 onClick={() => handleClickActiveFilter(nameFilter, name)}
             >
                 <span className={classNameBox} />
-                <span className="app-categories-list__name">{value}</span>
+                <span className="app-list__name">{value}</span>
             </li>
         )
     })
 
 
     return (
-        <>
+        <ul className="app-list__items">
             {renderFilterItems}
-        </>
+        </ul>
     )
 }
 

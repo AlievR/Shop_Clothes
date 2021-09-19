@@ -1,12 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { filters } from '../../static'
-import {filtersType} from '../../type/filter'
-import {sizeFilters, colorFilters, 
-sortFilters, clearFilters} from '../../redux/actions/filters'
+import { filtersType } from '../../type/filter'
+import {
+    sizeFilters, colorFilters,
+    sortFilters, clearFilters
+} from '../../redux/actions/filters'
 import FilterListItem from '../FilterListItem/FilterListItem'
 import ButtonDrop from '../ButtonDrop/ButtonDrop'
 import './FilterList.scss'
+import Button from '../Button/Button'
 
 
 const FilterList: React.FC = () => {
@@ -40,18 +43,16 @@ const FilterList: React.FC = () => {
                                 key={id}>
                                 <ButtonDrop label={label}>
                                     <FilterListItem items={items}
-                                    handleClickActiveFilter={filterDispatch}/>
+                                        handleClickActiveFilter={filterDispatch} />
                                 </ButtonDrop>
                             </li>
                         )
                     })
                 }
                 <li className="app-filter-list__item">
-                    <button className="app-filter-list__delete-filters"
-                        onClick={handleClickClear}
-                    >
+                    <Button onClick={handleClickClear} type="dark">
                         <span>Очистить фильтры</span>
-                    </button>
+                    </Button>
                 </li>
             </ul>
         </div>

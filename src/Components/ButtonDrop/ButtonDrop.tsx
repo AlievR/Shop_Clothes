@@ -31,12 +31,10 @@ const ButtonDrop: React.FC<IbuttonDropComponent> = ({ label, children }) => {
             {
                 isComponentVisible && (
                     <div className="app-button-drop__active-filter">
-                        <ul className="app-multi-filter__items">
-                            {
-                              React.isValidElement(children) &&  
-                              React.cloneElement(children, {setIsComponentVisible: setIsComponentVisible})
-                            }
-                        </ul>
+                        {
+                            React.isValidElement(children) &&
+                            React.cloneElement(children, { setIsComponentVisible: setIsComponentVisible })
+                        }
                     </div>
                 )}
         </div >

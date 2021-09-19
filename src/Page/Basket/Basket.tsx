@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import './Basket.scss'
-import { selectBasketId, selectTotalSum } from '../../redux/reducers/basket'
+import { selectBasketId, selectTotalSum, selectTotalCount } from '../../redux/reducers/basket'
 import { deleteAllItemAction } from '../../redux/actions/basket'
 import BaskeItem from '../../Components/BaskeItem/BaskeItem'
 import BasketEmpty from '../../Components/BasketEmpty/BasketEmpty'
@@ -13,6 +13,7 @@ const Basket: React.FC = () => {
 
     const basketId = useSelector(selectBasketId)
     const totalSum = useSelector(selectTotalSum)
+    const totalCount = useSelector(selectTotalCount)
 
     const renderBasketList = basketId.map(({ id }) => {
         return <BaskeItem key={id} id={id} />
@@ -50,7 +51,7 @@ const Basket: React.FC = () => {
                                         </div>
                                         <div className="app-basket__total-box">
                                             <span className="app-basket__total-label">Количество:</span>
-                                            <span className="app-basket__total-sum"> 3 шт.</span>
+                                            <span className="app-basket__total-sum">{totalCount} шт.</span>
                                         </div>
                                     </div>
                                     <button className="app-basket__confirm-btn">
