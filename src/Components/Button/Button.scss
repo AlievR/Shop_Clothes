@@ -9,25 +9,76 @@ $dark:  #212529;
 
 
 .btn{
+    display: inline-block;
     font-size: 16px;
     font-weight: 400;
     cursor: pointer;
-    display: inline-block;
     font-family: 'Montserrat', sans-serif;
-    transition: background-color .15s
+    transition: background-color .15s;
+    border: 1px solid #fff;
+    background-color: #fff;
 }
+
+.dropdown-toggle{
+    position: relative;
+    width: 100%;
+    text-align: left;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 37%;
+        right: 8%;
+        border: solid black;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+    }
+}
+
+/* Button style */
 
 .btn-primary{
     background-color: $primary;
+    border-color:  $primary;
+    color: #fff;
+}
+
+.btn-outline-primary{
     border: 1px solid $primary;
     color: #fff;
 }
+
+.btn-light{
+    background-color: $light;
+    border: 1px solid $light;
+    color: #000;
+}
+
+.btn-outline-light{
+    border: 1px solid $light;
+    color: #000;
+}
+
+
+.btn-dark{
+    background-color: $dark;
+    border: 1px solid $dark;
+    color: #fff;
+}
+
+.btn-outline-dark{
+    border: 1px solid $dark;
+    color: #000;
+}
+
 
 .btn-secondary{
     background-color: $secondary;
     border: 1px solid $secondary;
     color: #fff;
 }
+
 
 .btn-success{
     background-color: $success;
@@ -54,18 +105,9 @@ $dark:  #212529;
     color: #000;
 }
 
-.btn-light{
-    background-color: $light;
-    border: 1px solid $light;
-    color: #000;
-}
 
 
-.btn-dark{
-    background-color: $dark;
-    border: 1px solid $dark;
-    color: #fff;
-}
+/* Button size */
 
 .btn-small{
     padding: 5px 10px;
@@ -73,11 +115,11 @@ $dark:  #212529;
 }
 
 .btn-medium{
-    padding: 10px 20px;
+    padding: 10px 30px;
     font-size: 16px;
 }
 
 .btn-large{
-    padding: 15px 30px;
+    padding: 10px 50px;
     font-size: 18px;
 }

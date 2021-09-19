@@ -6,8 +6,8 @@ import {
     sizeFilters, colorFilters,
     sortFilters, clearFilters
 } from '../../redux/actions/filters'
-import FilterListItem from '../FilterListItem/FilterListItem'
-import ButtonDrop from '../ButtonDrop/ButtonDrop'
+import DropdownList from '../DropdownList/DropdownList'
+import Dropdown from '../Dropdown/Dropdown'
 import './FilterList.scss'
 import Button from '../Button/Button'
 
@@ -38,19 +38,18 @@ const FilterList: React.FC = () => {
                     filters.map((filter) => {
                         const { id, label, ...items } = filter
                         return (
-                            <li
-                                className="app-filter-list__item"
-                                key={id}>
-                                <ButtonDrop label={label}>
-                                    <FilterListItem items={items}
+                            <li key={id} className="app-filter-list__item">
+                                <Dropdown label={label}>
+                                    <DropdownList items={items}
                                         handleClickActiveFilter={filterDispatch} />
-                                </ButtonDrop>
+                                </Dropdown>
                             </li>
                         )
                     })
                 }
                 <li className="app-filter-list__item">
-                    <Button onClick={handleClickClear} type="dark">
+                    <Button onClick={handleClickClear} 
+                    type="dark" style={{width: "100%"}}>
                         <span>Очистить фильтры</span>
                     </Button>
                 </li>

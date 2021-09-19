@@ -1,20 +1,19 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import './ProductDetail.scss'
-import ButtonDrop from '../../Components/ButtonDrop/ButtonDrop'
 import { RootState } from '../../redux/reducers'
 import { selecCtlothesById } from '../../redux/reducers/clothes'
-import { useSelector, useDispatch } from 'react-redux'
-import Select from '../../Components/Select/Select'
 import { IbasketPayload, basketActionButton } from '../../type/basket'
 import { actionBasket } from '../../redux/actions/basket'
 import {IlistClothes} from '../../type/shop'
+import Button from '../../Components/Button/Button'
+import Dropdown from '../../Components/Dropdown/Dropdown'
+import Select from '../../Components/Select/Select'
 
 const ProductDetail: React.FC = () => {
 
     const dispatch = useDispatch()
-
-
     const { id } = useParams<{ id: string }>()
     const { name, price, color, size, img_card1, img_card2 } =
     useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
@@ -24,17 +23,14 @@ const ProductDetail: React.FC = () => {
         setActiveSize(selectedSize)
     }
 
-    const handleClickAddClothes = (e: React.MouseEvent<HTMLButtonElement>) => {
-        const action = e.currentTarget.name
+    const handleClickAddClothes = () => {
         const selectItem: IbasketPayload = {
             id: id + activeSize,
             size: activeSize,
-            action: action
+            action: basketActionButton.plus
         }
         dispatch(actionBasket(selectItem))
     }
-
-
 
     return (
         <main className="app-product-detail">
@@ -60,17 +56,15 @@ const ProductDetail: React.FC = () => {
                             <span className="app-product-detail__info-color-value"> {color} </span>
                         </div>
                         <div>
-                            <ButtonDrop label={activeSize}>
+                            <Dropdown label={activeSize}>
                                 <Select sizes={size}
                                     activeSize={activeSize} handleClickActiveSize={handleClickActiveSize}
                                 />
-                            </ButtonDrop>
-                            <button className="app-product-detail__add-btn"
-                                 name={basketActionButton.plus}
-                                 onClick={handleClickAddClothes}
-                            >
-                                Добавить в корзину
-                            </button>
+                            </Dropdown>
+                            <Button onClick={handleClickAddClothes}
+                            style={{width: "100%"}}>
+                                <span>Добавить в корзину</span>
+                            </Button>
                         </div>
                     </div>
                 </div>

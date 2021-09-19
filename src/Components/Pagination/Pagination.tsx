@@ -1,28 +1,21 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import './PaginationButton.scss'
-import { paginationClothes } from '../../redux/actions/filters'
+import { useSelector } from 'react-redux'
+import './Pagination.scss'
 import { selectClothesLength} from '../../redux/reducers/clothes'
 import {fillArrayPagination, selectTotalPage} from '../../redux/reducers/filters'
+import Button from '../Button/Button'
+import {Ipagination} from '../../type/general'
 
-const PaginationButton: React.FC = () => {
-    const dispatch = useDispatch()
+const Pagination: React.FC<Ipagination> = ({onClick}) => {
 
     const pageNumbers = useSelector(fillArrayPagination)
     const clothesTotalPage = useSelector(selectTotalPage)
     const lengthClothes = useSelector(selectClothesLength)
 
-
-
-    const handleClickPagination = () => {
-        dispatch(paginationClothes(pageNumbers))
-    }
-
     let displayTotal = clothesTotalPage
     if(clothesTotalPage > lengthClothes){
         displayTotal = lengthClothes
     }
-
 
     return (
         <div className="app-pagination">
@@ -31,15 +24,14 @@ const PaginationButton: React.FC = () => {
             </h2>
             {
                 (lengthClothes - clothesTotalPage) > 0 &&
-                <button className="app-pagination__more-load"
-                    onClick={handleClickPagination}>
-                    <span className="app-pagination__text">
-                        Загрузить еще
-                    </span>
-                </button>
+                <Button onClick={ () => onClick(pageNumbers)} 
+                type="outline-dark" size="large" 
+                style={{fontWeight: "900"}} >
+                    <span>Загрузить еще</span>
+                </Button>
             }
         </div>
     )
 }
 
-export default PaginationButton
+export default Pagination

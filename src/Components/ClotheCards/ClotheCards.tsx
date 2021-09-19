@@ -4,10 +4,11 @@ import './ClotheCards.scss'
 import { selectClothesLength, selectLoading, selectError,
 selectClothesIds, selectGender} from '../../redux/reducers/clothes'
 import { fetchClothes} from '../../redux/actions/clothes'
-import {clearFilters} from '../../redux/actions/filters'
+import {clearFilters, paginationClothes} from '../../redux/actions/filters'
 import ClotheCard from '../ClotheCard/ClotheCard'
 import SpinnerLoading from '../SpinnerLoading/SpinnerLoading'
-import PaginationButton from '../../Components/PaginationButton/PaginationButton'
+import Pagination from '../Pagination/Pagination'
+
 
 const ClotheCards: React.FC = () => {
 
@@ -18,6 +19,7 @@ const ClotheCards: React.FC = () => {
     const lengthClothes = useSelector(selectClothesLength)
     const clothesId = useSelector(selectClothesIds)
     const gender = useSelector(selectGender)
+    
 
     useEffect(() => {
         function fetchMyAPI() {
@@ -26,6 +28,11 @@ const ClotheCards: React.FC = () => {
         }
         fetchMyAPI()
     }, [gender, dispatch])
+
+
+    const handleClickPagination = (pageNumbers : number) => {
+        dispatch(paginationClothes(pageNumbers))
+    }
 
 
     const renderListClothes = clothesId.map((id) => {
@@ -48,7 +55,7 @@ const ClotheCards: React.FC = () => {
                     {renderListClothes}
                 </ul>
             </div>
-            {lengthClothes > 0 && <PaginationButton />}
+            {lengthClothes > 0 && <Pagination onClick={handleClickPagination}/>}
         </section>
     )
 }

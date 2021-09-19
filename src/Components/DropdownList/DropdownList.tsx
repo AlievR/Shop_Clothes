@@ -1,12 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import './FilterListItem.scss'
+import './DropdownList.scss'
 import { IfilterListItemComponent } from '../../type/filter'
 import { selectOptionsCategory } from '../../redux/reducers/filters'
 import { RootState } from '../../redux/reducers'
 
 
-const FilterListItem : React.FC<IfilterListItemComponent> = ({ items, handleClickActiveFilter }) => {
+const DropdownList : React.FC<IfilterListItemComponent> = ({ items, handleClickActiveFilter }) => {
 
     const { nameFilter, options } = items
 
@@ -15,8 +15,8 @@ const FilterListItem : React.FC<IfilterListItemComponent> = ({ items, handleClic
 
     const renderFilterItems = options.map((opt) => {
         const { id, value, name } = opt
-        let classNameItem = "app-list__item"
-        let classNameBox = "app-list__box"
+        let classNameItem = "app-dropdown-list__item"
+        let classNameBox = "app-dropdown-list__box"
         if (activeOpt.includes(name)) {
             classNameItem += " active-item"
             classNameBox += " active-box"
@@ -26,17 +26,17 @@ const FilterListItem : React.FC<IfilterListItemComponent> = ({ items, handleClic
                 onClick={() => handleClickActiveFilter(nameFilter, name)}
             >
                 <span className={classNameBox} />
-                <span className="app-list__name">{value}</span>
+                <span className="app-dropdown-list__value">{value}</span>
             </li>
         )
     })
 
 
     return (
-        <ul className="app-list__items">
+        <ul className="app-dropdown-list">
             {renderFilterItems}
         </ul>
     )
 }
 
-export default FilterListItem
+export default DropdownList
