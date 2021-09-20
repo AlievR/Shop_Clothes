@@ -8,7 +8,7 @@ export const fetchClothes = () => {
         const { gender } = getState().clothes
         dispatch(loadingClothes(true))
         try {
-            const response = await axios.get(`http://127.0.0.1:3001/${gender}-clothes`)
+            const response = await axios.get(`/${gender}-clothes`)
             dispatch({ type: clothesActionTypes.FETCH_CLOTHES, payload: response.data })
             dispatch(loadingClothes(false))
         }
