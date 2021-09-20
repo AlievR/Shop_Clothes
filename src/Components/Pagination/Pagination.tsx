@@ -26,7 +26,7 @@ const Pagination: React.FC<Ipagination> = ({onClick}) => {
                 (lengthClothes - clothesTotalPage) > 0 &&
                 <Button onClick={ () => onClick(pageNumbers)} 
                 type="outline-dark" size="large" 
-                style={{fontWeight: "900"}} >
+                style={{fontWeight: "900", textTransform: "uppercase"}} >
                     <span>Загрузить еще</span>
                 </Button>
             }

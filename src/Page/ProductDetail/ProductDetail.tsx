@@ -6,10 +6,10 @@ import { RootState } from '../../redux/reducers'
 import { selecCtlothesById } from '../../redux/reducers/clothes'
 import { IbasketPayload, basketActionButton } from '../../type/basket'
 import { actionBasket } from '../../redux/actions/basket'
-import {IlistClothes} from '../../type/shop'
+import { IlistClothes } from '../../type/shop'
 import Button from '../../Components/Button/Button'
 import Dropdown from '../../Components/Dropdown/Dropdown'
-import Select from '../../Components/Select/Select'
+import DropdownList from '../../Components/DropdownList/DropdownList'
 
 const ProductDetail: React.FC = () => {
 
@@ -19,8 +19,8 @@ const ProductDetail: React.FC = () => {
     useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
     const [activeSize, setActiveSize] = useState('Выбрать размер')
 
-    const handleClickActiveSize = (selectedSize: string) => {
-        setActiveSize(selectedSize)
+    const handleClickActiveSize = (payload: string) => {
+        setActiveSize(payload)
     }
 
     const handleClickAddClothes = () => {
@@ -55,14 +55,15 @@ const ProductDetail: React.FC = () => {
                             <label className="app-product-detail__info-color-label">Цвет:</label>
                             <span className="app-product-detail__info-color-value"> {color} </span>
                         </div>
-                        <div>
+                        <div className="app-product-detail__choose">
                             <Dropdown label={activeSize}>
-                                <Select sizes={size}
-                                    activeSize={activeSize} handleClickActiveSize={handleClickActiveSize}
+                                <DropdownList options={size} activeValue={activeSize}
+                                    onClick={(payload) => handleClickActiveSize(payload)}
+                                    visible={false}
                                 />
                             </Dropdown>
                             <Button onClick={handleClickAddClothes}
-                            style={{width: "100%"}}>
+                                style={{ width: "100%" }}>
                                 <span>Добавить в корзину</span>
                             </Button>
                         </div>

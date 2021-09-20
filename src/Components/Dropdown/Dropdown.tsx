@@ -14,7 +14,8 @@ const Dropdown: React.FC<IbuttonDropComponent> = ({ label, children }) => {
 
     return (
         <div ref={ref} className="app-dropdown">
-            <Button onClick={handleClickActiveFilter} type="outline-dark" toggle>
+            <Button onClick={handleClickActiveFilter} 
+            type="outline-dark" toggle>
                 <span>{label}</span>
             </Button>
             {

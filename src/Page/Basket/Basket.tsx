@@ -5,7 +5,7 @@ import { selectBasketId, selectTotalSum, selectTotalCount } from '../../redux/re
 import { deleteAllItemAction } from '../../redux/actions/basket'
 import BaskeItem from '../../Components/BaskeItem/BaskeItem'
 import BasketEmpty from '../../Components/BasketEmpty/BasketEmpty'
-
+import Button from '../../Components/Button/Button'
 
 const Basket: React.FC = () => {
 
@@ -32,10 +32,11 @@ const Basket: React.FC = () => {
                 <div className="app-basket__container">
                     <div className="app-basket__boom">
                         <h1 className="app-basket__boom-title">Корзина</h1>
-                        <button className="app-basket__boom-btn"
-                            onClick={handleClickDelleteAAllBasket}>
+                        <Button onClick={handleClickDelleteAAllBasket}
+                            type="light"
+                        >
                             <span>Очистить корзину</span>
-                        </button>
+                        </Button>
                     </div>
                     <div className="app-basket__intro">
                         <ul className="app-basket__items">
@@ -54,11 +55,11 @@ const Basket: React.FC = () => {
                                             <span className="app-basket__total-sum">{totalCount} шт.</span>
                                         </div>
                                     </div>
-                                    <button className="app-basket__confirm-btn">
-                                        <span>
-                                            Оформить заказ
-                                        </span>
-                                    </button>
+                                    <Button onClick={() => alert("Спасибо за заказ!")}
+                                        type="dark" style={{width: "100%"}}
+                                    >
+                                        <span> Оформить заказ</span>
+                                    </Button>
                                 </div>
                             </div>
                         </div>

@@ -1,3 +1,6 @@
+import { Dispatch, SetStateAction } from "react";
+
+
 export interface IfilterPosition {
     id: number,
     name: string
@@ -8,19 +11,16 @@ export interface IfiltersItem {
     id: number,
     nameFilter: string,
     label: string,
-    options: IfilterPosition[]
-}
-
-
-interface IfilterProps {
-    nameFilter: string,
-    options: IfilterPosition[]
+    options: string[]
 }
 
 
 export interface IfilterListItemComponent {
-    items: IfilterProps,
-    handleClickActiveFilter: (nameFilter: string, payload: string) => void
+    options: string[],
+    activeValue: string[] | string,
+    visible ?: boolean,
+    onClick: (payload: string) => void,
+    setIsComponentVisible ?: Dispatch<SetStateAction<boolean>> 
 }
 
 
@@ -50,19 +50,20 @@ export enum filtersType {
 }
 
 export enum sortType {
-    popular = "popular",
-    increase = "increase",
-    decrease = "decrease",
+    popular = "По популярности",
+    increase = "По возрастанию",
+    decrease = "По убыванию",
 }
 
 export enum colorType {
-    white = "white",
-    black = "black",
-    blue = "blue",
-    beige = "beige",
-    green = "green",
-    brown = "brown"
+    white = "Белый",
+    black = "Черный",
+    blue = "Синий",
+    beige = "Бежевый",
+    green = "Зеленый",
+    brown = "Коричневый"
 }
+
 
 export enum sizeType {
     xs = "xs",

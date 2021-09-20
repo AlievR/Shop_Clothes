@@ -53,12 +53,9 @@ export const filters = (state = initialState, action: IfiltersAction): IfiltersS
     }
 }
 
-export const selectFilters = createSelector(
-    (state: RootState) => state.filters,
-    (filters) => {
-        return filters;
-    }
-)
+export const selectSort = (state: RootState) => state.filters.sort;
+export const selectSizes = (state: RootState) => state.filters.sizes;
+export const selectColors = (state: RootState) => state.filters.colors;
 
 export const selectTotalPage = (state: RootState) => state.filters.clothesPerPage * state.filters.currentPage;
 
@@ -70,17 +67,3 @@ export const fillArrayPagination = createSelector(
         return currentPage;
     }
 )
-
-export const selectOptionsCategory = (state: RootState, name: string) => {
-
-    const { sizes, colors, sort } = state.filters
-    switch (name) {
-        case 'size': return sizes
-        case 'color': return colors
-        case 'sort': return sort
-        default: return []
-    }
-
-}
-
-export const selectSort = (state: RootState) => state.filters.sort;
