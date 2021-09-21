@@ -10,7 +10,9 @@ export const genderCategory : IgenderClothes[] = [
 ]
 
 const sortOptions = [sortType.popular, sortType.increase, sortType.decrease]
+
 const sizeOptions  = [sizeType.xs,sizeType.s,sizeType.m, sizeType.l, sizeType.xl]
+
 const colorOptions  = [colorType.white, colorType.black,colorType.blue, 
 colorType.beige, colorType.green, colorType.brown]
 

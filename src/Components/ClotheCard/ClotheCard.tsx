@@ -34,7 +34,7 @@ const ClotheCard: React.FC<IclothesItemComponent> = ({ id }) => {
                             className="app-clothes-item__text app-clothes-item__info-price">
                             {price} руб.
                         </span>
-                        <Link to="/" className="app-clothes-item__info-open">
+                        <Link to={path} className="app-clothes-item__info-open">
                             <span className="app-clothes-item__info-basket" />
                         </Link>
                     </div>

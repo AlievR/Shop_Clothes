@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './ProductDetail.scss'
 import { RootState } from '../../redux/reducers'
 import { selecCtlothesById } from '../../redux/reducers/clothes'
@@ -16,10 +18,10 @@ const ProductDetail: React.FC = () => {
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
     const { name, price, color, size, img_card1, img_card2 } =
-    useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
+        useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
 
     console.log("id", id)
-    
+
 
     const [activeSize, setActiveSize] = useState('Выбрать размер')
 
@@ -28,12 +30,33 @@ const ProductDetail: React.FC = () => {
     }
 
     const handleClickAddClothes = () => {
-        const selectItem: IbasketPayload = {
-            id: id + activeSize,
-            size: activeSize,
-            action: basketActionButton.plus
+        if (activeSize !== "Выбрать размер") {
+            const selectItem: IbasketPayload = {
+                id: id + activeSize,
+                size: activeSize,
+                action: basketActionButton.plus
+            }
+            dispatch(actionBasket(selectItem))
+            toast.success(`${name} успешно добавлены в корзину`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        } else {
+            toast.error('Необходимо выбра размер', {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }
-        dispatch(actionBasket(selectItem))
     }
 
     return (
@@ -70,6 +93,7 @@ const ProductDetail: React.FC = () => {
                                 style={{ width: "100%" }}>
                                 <span>Добавить в корзину</span>
                             </Button>
+                            <ToastContainer />
                         </div>
                     </div>
                 </div>
