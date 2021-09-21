@@ -29,6 +29,7 @@ const FilterList: React.FC = () => {
             case filtersType.color:
                 return dispatch(colorFilters(payload))
             case filtersType.sort:
+                console.log("ok")
                 return dispatch(sortFilters(payload))
         }
     }
@@ -44,24 +45,24 @@ const FilterList: React.FC = () => {
         }
     }
 
+    const renderFilterItems = filters.map((filter) => {
+        const { id, label, nameFilter, options } = filter
+        const activeValue = filterSelector(nameFilter)
+        return (
+            <li key={id} className="app-filter-list__item">
+                <Dropdown label={label}>
+                    <DropdownList options={options} 
+                    activeValue={activeValue}
+                    onClick={(payload) => filterDispatch(nameFilter,payload)} />
+                </Dropdown>
+            </li>
+        )
+    })
+
     return (
         <div className="app-filter-list">
             <ul className="app-filter-list__items">
-                {
-                    filters.map((filter) => {
-                        const { id, label, nameFilter, options } = filter
-                        const activeValue = filterSelector(nameFilter)
-                        return (
-                            <li key={id} className="app-filter-list__item">
-                                <Dropdown label={label}>
-                                    <DropdownList options={options} 
-                                    activeValue={activeValue}
-                                    onClick={(payload) => filterDispatch(nameFilter,payload)} />
-                                </Dropdown>
-                            </li>
-                        )
-                    })
-                }
+                {renderFilterItems}
                 <li className="app-filter-list__item">
                     <Button onClick={handleClickClear}
                         type="dark" style={{ width: "100%" }}>

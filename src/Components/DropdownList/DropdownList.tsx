@@ -16,6 +16,7 @@ const DropdownList: React.FC<IfilterListItemComponent> =
                 setIsComponentVisible(false)
             }
         }
+        console.log(activeValue)
 
         const renderFilterItems = options.map((value) => {
             const check = (typeof activeValue === "object")

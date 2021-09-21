@@ -1,4 +1,4 @@
-import { IfiltersState, filtersActionTypes, IfiltersAction } from '../../type/filter'
+import { IfiltersState, filtersActionTypes, IfiltersAction, sortType } from '../../type/filter'
 import { RootState } from './index'
 import { createSelector } from 'reselect'
 import {selectClothesLength} from './clothes'
@@ -6,7 +6,7 @@ import {selectClothesLength} from './clothes'
 const initialState: IfiltersState = {
     sizes: [],
     colors: [],
-    sort: "По популярности",
+    sort: sortType.popular,
     search: '',
     currentPage: 1,
     clothesPerPage: 8,
@@ -45,7 +45,7 @@ export const filters = (state = initialState, action: IfiltersAction): IfiltersS
         case filtersActionTypes.SEARCH_FILTERS:
             return { ...state, search: action.payload, currentPage: 1 }
         case filtersActionTypes.CLEAR_FILTERS:
-            return { ...state, sizes: [], colors: [], sort: "popular", search: '', currentPage: 1 }
+            return { ...state, sizes: [], colors: [], sort: sortType.popular, search: '', currentPage: 1 }
         case filtersActionTypes.PAGINATION:
             return { ...state, currentPage: action.payload }
         default:
