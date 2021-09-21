@@ -29,7 +29,6 @@ const FilterList: React.FC = () => {
             case filtersType.color:
                 return dispatch(colorFilters(payload))
             case filtersType.sort:
-                console.log("ok")
                 return dispatch(sortFilters(payload))
         }
     }
