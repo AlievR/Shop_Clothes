@@ -1,14 +1,14 @@
 {
-  "man-clothes": [
+  "Man-clothes": [
     {
       "id": 0,
       "name": "Хлопковый свитшот",
       "price": 2299,
       "size":  [ "s", "m", "l"],
       "color" : "Синий",
-      "img_main": "http://127.0.0.1/man/model0.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model0-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model0-2.jpg"
+      "img_main": "Images/Man/model0.jpg",
+      "img_card1": "Images/Man/Detail/model0-1.jpg",
+      "img_card2": "Images/Man/Detail/model0-2.jpg"
     },
     {
       "id": 1,
@@ -16,9 +16,9 @@
       "price": 1199,
       "size":  ["xs", "s"],
       "color" : "Белый",
-      "img_main": "http://127.0.0.1/man/model1.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model1-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model1-2.jpg"
+      "img_main": "Images/Man/model1.jpg",
+      "img_card1": "Images/Man/Detail/model1-1.jpg",
+      "img_card2": "Images/Man/Detail/model1-2.jpg"
     },
     {
       "id": 2,
@@ -26,9 +26,9 @@
       "price": 1790,
      "size":  ["m", "l", "xl"],
       "color" : "Белый",
-      "img_main": "http://127.0.0.1/man/model2.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model2-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model2-2.jpg"
+      "img_main": "Images/Man/model2.jpg",
+      "img_card1": "Images/Man/Detail/model2-1.jpg",
+      "img_card2": "Images/Man/Detail/model2-2.jpg"
     },
     {
       "id": 3,
@@ -36,9 +36,9 @@
       "price": 1999,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Зеленый",
-      "img_main": "http://127.0.0.1/man/model3.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model3-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model3-2.jpg"
+      "img_main": "Images/Man/model3.jpg",
+      "img_card1": "Images/Man/Detail/model3-1.jpg",
+      "img_card2": "Images/Man/Detail/model3-2.jpg"
     },
     {
       "id": 4,
@@ -46,9 +46,9 @@
       "price": 3210,
       "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Бежевый",
-      "img_main": "http://127.0.0.1/man/model4.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model4-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model4-2.jpg"
+      "img_main": "Images/Man/model4.jpg",
+      "img_card1": "Images/Man/Detail/model4-1.jpg",
+      "img_card2": "Images/Man/Detail/model4-2.jpg"
     },
     {
       "id": 5,
@@ -56,9 +56,9 @@
       "price": 1199,
      "size":  ["l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/man/model5.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model5-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model5-2.jpg"
+      "img_main": "Images/Man/model5.jpg",
+      "img_card1": "Images/Man/Detail/model5-1.jpg",
+      "img_card2": "Images/Man/Detail/model5-2.jpg"
     },
     {
       "id": 6,
@@ -66,9 +66,9 @@
       "price": 3290,
      "size":  ["xs","xl"],
       "color" : "Синий",
-      "img_main": "http://127.0.0.1/man/model6.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model6-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model6-2.jpg"
+      "img_main": "Images/Man/model6.jpg",
+      "img_card1": "Images/Man/Detail/model6-1.jpg",
+      "img_card2": "Images/Man/Detail/model6-2.jpg"
     },
     {
       "id": 7,
@@ -76,9 +76,9 @@
       "price": 2299,
      "size":  [ "m", "l"],
       "color" : "Коричневый",
-      "img_main": "http://127.0.0.1/man/model7.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model7-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model7-2.jpg"
+      "img_main": "Images/Man/model7.jpg",
+      "img_card1": "Images/Man/Detail/model7-1.jpg",
+      "img_card2": "Images/Man/Detail/model7-2.jpg"
     },
     {
       "id": 8,
@@ -86,9 +86,9 @@
       "price": 2990,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/man/model8.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model8-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model8-2.jpg"
+      "img_main": "Images/Man/model8.jpg",
+      "img_card1": "Images/Man/Detail/model8-1.jpg",
+      "img_card2": "Images/Man/Detail/model8-2.jpg"
     },
     {
       "id": 9,
@@ -96,9 +96,9 @@
       "price": 2100,
      "size":  ["m", "l"],
       "color" : "Зеленый",
-      "img_main": "http://127.0.0.1/man/model9.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model9-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model9-2.jpg"
+      "img_main": "Images/Man/model9.jpg",
+      "img_card1": "Images/Man/Detail/model9-1.jpg",
+      "img_card2": "Images/Man/Detail/model9-2.jpg"
     },
     {
       "id": 10,
@@ -106,9 +106,9 @@
       "price": 3290,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Бежевый",
-      "img_main": "http://127.0.0.1/man/model10.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model10-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model10-2.jpg"
+      "img_main": "Images/Man/model10.jpg",
+      "img_card1": "Images/Man/Detail/model10-1.jpg",
+      "img_card2": "Images/Man/Detail/model10-2.jpg"
     },
     {
       "id": 11,
@@ -116,9 +116,9 @@
       "price": 1699,
      "size":  ["s", "m", "l", "xl"],
       "color" : "Коричневый",
-      "img_main": "http://127.0.0.1/man/model11.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model11-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model11-2.jpg"
+      "img_main": "Images/Man/model11.jpg",
+      "img_card1": "Images/Man/Detail/model11-1.jpg",
+      "img_card2": "Images/Man/Detail/model11-2.jpg"
     },
     {
       "id": 12,
@@ -126,9 +126,9 @@
       "price": 1999,
      "size":  ["xs", "s", "m"],
       "color" : "Бежевый",
-      "img_main": "http://127.0.0.1/man/model12.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model12-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model12-2.jpg"
+      "img_main": "Images/Man/model12.jpg",
+      "img_card1": "Images/Man/Detail/model12-1.jpg",
+      "img_card2": "Images/Man/Detail/model12-2.jpg"
     },
     {
       "id": 13,
@@ -136,9 +136,9 @@
       "price": 1699,
      "size":  ["m", "l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/man/model13.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model13-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model13-2.jpg"
+      "img_main": "Images/Man/model13.jpg",
+      "img_card1": "Images/Man/Detail/model13-1.jpg",
+      "img_card2": "Images/Man/Detail/model13-2.jpg"
     },
     {
       "id": 14,
@@ -146,9 +146,9 @@
       "price": 2299,
      "size":  ["xs","m", "l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/man/model14.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model14-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model14-2.jpg"
+      "img_main": "Images/Man/model14.jpg",
+      "img_card1": "Images/Man/Detail/model14-1.jpg",
+      "img_card2": "Images/Man/Detail/model14-2.jpg"
     },
     {
       "id": 15,
@@ -156,24 +156,24 @@
       "price": 3999,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Белый",
-      "img_main": "http://127.0.0.1/man/model16.jpg",
-      "img_card1": "http://127.0.0.1/man/detail/model16-1.jpg",
-      "img_card2": "http://127.0.0.1/man/detail/model16-2.jpg"
+      "img_main": "Images/Man/model16.jpg",
+      "img_card1": "Images/Man/Detail/model16-1.jpg",
+      "img_card2": "Images/Man/Detail/model16-2.jpg"
     }
   ],
 
 
 
-  "woman-clothes": [
+  "Woman-clothes": [
     {
       "id": 0,
       "name": "Вязаный топ",
       "price": 1199,
      "size":  ["xs", "s"],
       "color" : "Белый",
-      "img_main": "http://127.0.0.1/woman/model0.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model0-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model0-2.jpg"
+      "img_main": "Images/Woman/model0.jpg",
+      "img_card1": "Images/Woman/Detail/model0-1.jpg",
+      "img_card2": "Images/Woman/Detail/model0-2.jpg"
     },
     {
       "id": 1,
@@ -181,9 +181,9 @@
       "price": 1699,
      "size":  ["m", "l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/woman/model1.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model1-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model1-2.jpg"
+      "img_main": "Images/Woman/model1.jpg",
+      "img_card1": "Images/Woman/Detail/model1-1.jpg",
+      "img_card2": "Images/Woman/Detail/model1-2.jpg"
     },
     {
       "id": 2,
@@ -191,9 +191,9 @@
       "price": 2499,
      "size":  ["xs", "l", "xl"],
       "color" : "Синий",
-      "img_main": "http://127.0.0.1/woman/model2.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model2-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model2-2.jpg"
+      "img_main": "Images/Woman/model2.jpg",
+      "img_card1": "Images/Woman/Detail/model2-1.jpg",
+      "img_card2": "Images/Woman/Detail/model2-2.jpg"
     },
     {
       "id": 3,
@@ -201,9 +201,9 @@
       "price": 3299,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Коричневый",
-      "img_main": "http://127.0.0.1/woman/model3.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model3-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model3-2.jpg"
+      "img_main": "Images/Woman/model3.jpg",
+      "img_card1": "Images/Woman/Detail/model3-1.jpg",
+      "img_card2": "Images/Woman/Detail/model3-2.jpg"
     },
     {
       "id": 4,
@@ -211,9 +211,9 @@
       "price": 899,
      "size":  ["l", "xl"],
       "color" : "Зеленый",
-      "img_main": "http://127.0.0.1/woman/model4.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model4-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model4-2.jpg"
+      "img_main": "Images/Woman/model4.jpg",
+      "img_card1": "Images/Woman/Detail/model4-1.jpg",
+      "img_card2": "Images/Woman/Detail/model4-2.jpg"
     },
     {
       "id": 5,
@@ -221,9 +221,9 @@
       "price": 11999,
      "size":  [ "m", "l", "xl"],
       "color" : "Синий",
-      "img_main": "http://127.0.0.1/woman/model5.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model5-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model5-2.jpg"
+      "img_main": "Images/Woman/model5.jpg",
+      "img_card1": "Images/Woman/Detail/model5-1.jpg",
+      "img_card2": "Images/Woman/Detail/model5-2.jpg"
     },
     {
       "id": 6,
@@ -231,9 +231,9 @@
       "price": 3290,
      "size":  [ "s", "xl"],
       "color" : "Белый",
-      "img_main": "http://127.0.0.1/woman/model6.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model6-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model6-2.jpg"
+      "img_main": "Images/Woman/model6.jpg",
+      "img_card1": "Images/Woman/Detail/model6-1.jpg",
+      "img_card2": "Images/Woman/Detail/model6-2.jpg"
     },
     {
       "id": 7,
@@ -241,9 +241,9 @@
       "price": 3999,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/woman/model7.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model7-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model7-2.jpg"
+      "img_main": "Images/Woman/model7.jpg",
+      "img_card1": "Images/Woman/Detail/model7-1.jpg",
+      "img_card2": "Images/Woman/Detail/model7-2.jpg"
     },
     {
       "id": 8,
@@ -251,9 +251,9 @@
       "price": 1699,
      "size":  ["xs", "l", "xl"],
       "color" : "Бежевый",
-      "img_main": "http://127.0.0.1/woman/model8.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model8-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model8-2.jpg"
+      "img_main": "Images/Woman/model8.jpg",
+      "img_card1": "Images/Woman/Detail/model8-1.jpg",
+      "img_card2": "Images/Woman/Detail/model8-2.jpg"
     },
     {
       "id": 9,
@@ -261,9 +261,9 @@
       "price": 899,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Коричневый",
-      "img_main": "http://127.0.0.1/woman/model9.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model9-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model9-2.jpg"
+      "img_main": "Images/Woman/model9.jpg",
+      "img_card1": "Images/Woman/Detail/model9-1.jpg",
+      "img_card2": "Images/Woman/Detail/model9-2.jpg"
     },
     {
       "id": 10,
@@ -271,9 +271,9 @@
       "price": 3290,
      "size":  ["xs", "s", "m", "l", "xl"],
       "color" : "Черный",
-      "img_main": "http://127.0.0.1/woman/model10.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model10-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model10-2.jpg"
+      "img_main": "Images/Woman/model10.jpg",
+      "img_card1": "Images/Woman/Detail/model10-1.jpg",
+      "img_card2": "Images/Woman/Detail/model10-2.jpg"
     },
     {
       "id": 11,
@@ -281,9 +281,9 @@
       "price": 1899,
      "size":  ["xs", "s", "m","xl"],
       "color" : "Белый",
-      "img_main": "http://127.0.0.1/woman/model11.jpg",
-      "img_card1": "http://127.0.0.1/woman/detail/model11-1.jpg",
-      "img_card2": "http://127.0.0.1/woman/detail/model11-2.jpg"
+      "img_main": "Images/Woman/model11.jpg",
+      "img_card1": "Images/Woman/Detail/model11-1.jpg",
+      "img_card2": "Images/Woman/Detail/model11-2.jpg"
     }
   ]
 }
