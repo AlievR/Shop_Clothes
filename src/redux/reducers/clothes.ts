@@ -70,35 +70,35 @@ export const selectClothesLength = createSelector(
 );
 
 
-export const selectPaginationClothes = createSelector(
-    selectFilteredClothes,
-    (state: RootState) => state.filters.currentPage,
-    (state: RootState) => state.filters.clothesPerPage,
-    (filteredClothes, currentPage, clothesPerPage) =>{
-        const indexOfLastPost = currentPage * clothesPerPage
-        return filteredClothes.slice(0, indexOfLastPost)
-    }
-)
-
-
 export const selectSortClothes = createSelector(
-    selectPaginationClothes,
+    selectFilteredClothes,
     (state: RootState) => state.filters.sort,
-    (paginationClothes, sort) => {
-        const newList = [...paginationClothes]
+    (filterClothes, sort) => {
+        const newList = [...filterClothes]
         switch (sort) {
-            case sortType.popular: return paginationClothes
+            case sortType.popular: return filterClothes
             case sortType.increase:
                 return newList.sort((a, b) => a.price - b.price)
             case sortType.decrease:
                 return newList.sort((a, b) => b.price - a.price)
-            default: return paginationClothes
+            default: return filterClothes
         }
     }
 )
 
-export const selectClothesIds = createSelector(
+export const selectPaginationClothes = createSelector(
     selectSortClothes,
-    (selectSortClothes) => selectSortClothes.map((item) => item.id)
+    (state: RootState) => state.filters.currentPage,
+    (state: RootState) => state.filters.clothesPerPage,
+    (sortedClothes, currentPage, clothesPerPage) =>{
+        const indexOfLastPost = currentPage * clothesPerPage
+        return sortedClothes.slice(0, indexOfLastPost)
+    }
+)
+
+
+export const selectClothesIds = createSelector(
+    selectPaginationClothes,
+    (paginationClothes) => paginationClothes.map((item) => item.id)
 );
 

@@ -117,6 +117,11 @@ $dark:  #212529;
 .btn-medium{
     padding: 10px 20px;
     font-size: 16px;
+    @media only screen  and (max-width: 567px) {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
 }
 
 .btn-large{
