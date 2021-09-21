@@ -6,7 +6,7 @@ import {selectClothesLength} from './clothes'
 const initialState: IfiltersState = {
     sizes: [],
     colors: [],
-    sort: "popular",
+    sort: "По популярности",
     search: '',
     currentPage: 1,
     clothesPerPage: 8,
