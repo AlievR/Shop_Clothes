@@ -1,11 +1,11 @@
 import { createStore, compose, applyMiddleware } from "redux";
 import thunk from 'redux-thunk'
-import {rootReducer, RootState} from "./redux/reducers";
+import {rootReducer} from "./redux/reducers";
 
 
 const loadFromLocalStorage = () => {
     try {
-      const serializedState = localStorage.getItem('state');
+      const serializedState = localStorage.getItem('basket');
       if (serializedState === null) {
         return undefined;
       }
@@ -21,15 +21,9 @@ const store = createStore(rootReducer,
     (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__())
 )
 
-store.subscribe(() => saveToLocalStorage(store.getState()));
 
+store.subscribe(() => {
+    localStorage.setItem('basket', JSON.stringify(store.getState()))
+});
 
-const saveToLocalStorage = (state: RootState) => {
-    try {
-        const serializedState = JSON.stringify(state.basket);
-        localStorage.setItem('state', serializedState);
-    } catch {
-    }
-};
-  
 export default store

@@ -17,6 +17,10 @@ const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>()
     const { name, price, color, size, img_card1, img_card2 } =
     useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
+
+    console.log("id", id)
+    
+
     const [activeSize, setActiveSize] = useState('Выбрать размер')
 
     const handleClickActiveSize = (payload: string) => {
