@@ -37,7 +37,7 @@ const ProductDetail: React.FC = () => {
                 action: basketActionButton.plus
             }
             dispatch(actionBasket(selectItem))
-            toast.success(`${name} успешно добавлены в корзину`, {
+            toast.success(`${name} (${size}) успешно добавлена в корзину`, {
                 position: "bottom-right",
                 autoClose: 5000,
                 hideProgressBar: false,
