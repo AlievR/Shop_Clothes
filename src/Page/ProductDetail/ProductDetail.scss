@@ -18,11 +18,19 @@
         width: 75%;
         &-block{
             width: calc(50% - 15px);
+            display: block;
+            position: relative;
+            margin-bottom: 7px;
+            background-color: #f5f5f5;
+            padding-top: 72.7778%;
+            border-radius: 10px;
         }
         &-img{
             max-width: 100%;
             height: auto;
             border-radius: 10px;
+            position: absolute;
+            top: 0;
         }
     }
 
