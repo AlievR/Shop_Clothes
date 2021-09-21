@@ -5,9 +5,9 @@
       "name": "Хлопковый свитшот",
       "price": 2299,
       "size": [
-        "s",
-        "m",
-        "l"
+        "S",
+        "M",
+        "L"
       ],
       "color": "Синий",
       "img_main": "main/Man/model0.jpg",
@@ -19,8 +19,8 @@
       "name": "Футболка из хлопка премиум",
       "price": 1199,
       "size": [
-        "xs",
-        "s"
+        "XS",
+        "S"
       ],
       "color": "Белый",
       "img_main": "main/Man/model1.jpg",
@@ -32,9 +32,9 @@
       "name": "Рубашка Regular Fit",
       "price": 1790,
       "size": [
-        "m",
-        "l",
-        "xl"
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Белый",
       "img_main": "main/Man/model2.jpg",
@@ -46,11 +46,11 @@
       "name": "Рубашка поло из хлопка",
       "price": 1999,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Зеленый",
       "img_main": "main/Man/model3.jpg",
@@ -62,11 +62,11 @@
       "name": "Куртка из плюша",
       "price": 3210,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Бежевый",
       "img_main": "main/Man/model4.jpg",
@@ -78,8 +78,8 @@
       "name": "Свитшот Relaxed Fit",
       "price": 1199,
       "size": [
-        "l",
-        "xl"
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Man/model5.jpg",
@@ -91,8 +91,8 @@
       "name": "Джоггеры Regular Tapered",
       "price": 3290,
       "size": [
-        "xs",
-        "xl"
+        "XS",
+        "XL"
       ],
       "color": "Синий",
       "img_main": "main/Man/model6.jpg",
@@ -104,8 +104,8 @@
       "name": "Утепленная куртка",
       "price": 2299,
       "size": [
-        "m",
-        "l"
+        "M",
+        "L"
       ],
       "color": "Коричневый",
       "img_main": "main/Man/model7.jpg",
@@ -117,11 +117,11 @@
       "name": "Хлопковые джоггеры",
       "price": 2990,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Man/model8.jpg",
@@ -133,8 +133,8 @@
       "name": "Шорты из футера Regular Fit",
       "price": 2100,
       "size": [
-        "m",
-        "l"
+        "M",
+        "L"
       ],
       "color": "Зеленый",
       "img_main": "main/Man/model9.jpg",
@@ -146,11 +146,11 @@
       "name": "Джоггеры карго",
       "price": 3290,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Бежевый",
       "img_main": "main/Man/model10.jpg",
@@ -162,10 +162,10 @@
       "name": "Джоггеры Slim Fit",
       "price": 1699,
       "size": [
-        "s",
-        "m",
-        "l",
-        "xl"
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Коричневый",
       "img_main": "main/Man/model11.jpg",
@@ -177,9 +177,9 @@
       "name": "Свитшот Relaxed Fit",
       "price": 1999,
       "size": [
-        "xs",
-        "s",
-        "m"
+        "XS",
+        "S",
+        "M"
       ],
       "color": "Бежевый",
       "img_main": "main/Man/model12.jpg",
@@ -191,9 +191,9 @@
       "name": "Джоггеры карго",
       "price": 1699,
       "size": [
-        "m",
-        "l",
-        "xl"
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Man/model13.jpg",
@@ -205,10 +205,10 @@
       "name": "Хлопковый свитшот",
       "price": 2299,
       "size": [
-        "xs",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Man/model14.jpg",
@@ -220,11 +220,11 @@
       "name": "Водоотталкивающая куртка",
       "price": 3999,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Белый",
       "img_main": "main/Man/model16.jpg",
@@ -238,8 +238,8 @@
       "name": "Вязаный топ",
       "price": 1199,
       "size": [
-        "xs",
-        "s"
+        "XS",
+        "S"
       ],
       "color": "Белый",
       "img_main": "main/Woman/model0.jpg",
@@ -251,9 +251,9 @@
       "name": "Джинсы Slim High Ankle",
       "price": 1699,
       "size": [
-        "m",
-        "l",
-        "xl"
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Woman/model1.jpg",
@@ -265,9 +265,9 @@
       "name": "Джинсы Slim High Ankle",
       "price": 2499,
       "size": [
-        "xs",
-        "l",
-        "xl"
+        "XS",
+        "L",
+        "XL"
       ],
       "color": "Синий",
       "img_main": "main/Woman/model2.jpg",
@@ -279,11 +279,11 @@
       "name": "Утепленный жилет с капюшоном",
       "price": 3299,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Коричневый",
       "img_main": "main/Woman/model3.jpg",
@@ -295,8 +295,8 @@
       "name": "Жилет",
       "price": 899,
       "size": [
-        "l",
-        "xl"
+        "L",
+        "XL"
       ],
       "color": "Зеленый",
       "img_main": "main/Woman/model4.jpg",
@@ -308,9 +308,9 @@
       "name": "Джемпер из кашемира",
       "price": 11999,
       "size": [
-        "m",
-        "l",
-        "xl"
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Синий",
       "img_main": "main/Woman/model5.jpg",
@@ -322,8 +322,8 @@
       "name": "Утепленный жилет",
       "price": 3290,
       "size": [
-        "s",
-        "xl"
+        "S",
+        "XL"
       ],
       "color": "Белый",
       "img_main": "main/Woman/model6.jpg",
@@ -335,11 +335,11 @@
       "name": "Платье с плиссированной юбкой",
       "price": 3999,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Woman/model7.jpg",
@@ -351,9 +351,9 @@
       "name": "Спортивные джоггеры",
       "price": 1699,
       "size": [
-        "xs",
-        "l",
-        "xl"
+        "XS",
+        "L",
+        "XL"
       ],
       "color": "Бежевый",
       "img_main": "main/Woman/model8.jpg",
@@ -365,11 +365,11 @@
       "name": "Легинсы с треугольной талией",
       "price": 899,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Коричневый",
       "img_main": "main/Woman/model9.jpg",
@@ -381,11 +381,11 @@
       "name": "Воздушное платье",
       "price": 3290,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "l",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
       ],
       "color": "Черный",
       "img_main": "main/Woman/model10.jpg",
@@ -397,10 +397,10 @@
       "name": "Длинное худи",
       "price": 1899,
       "size": [
-        "xs",
-        "s",
-        "m",
-        "xl"
+        "XS",
+        "S",
+        "M",
+        "XL"
       ],
       "color": "Белый",
       "img_main": "main/Woman/model11.jpg",

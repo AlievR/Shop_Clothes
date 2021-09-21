@@ -15,6 +15,7 @@ const Basket: React.FC = () => {
     const totalSum = useSelector(selectTotalSum)
     const totalCount = useSelector(selectTotalCount)
 
+
     const renderBasketList = basketId.map(({ id }) => {
         return <BaskeItem key={id} id={id} />
     })

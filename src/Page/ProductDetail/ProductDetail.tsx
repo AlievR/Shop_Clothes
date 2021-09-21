@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify';
@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import './ProductDetail.scss'
 import { RootState } from '../../redux/reducers'
 import { selecCtlothesById } from '../../redux/reducers/clothes'
-import { IbasketPayload, basketActionButton } from '../../type/basket'
-import { actionBasket } from '../../redux/actions/basket'
+import { IbasketApplicant } from '../../type/basket'
+import { addItemAction } from '../../redux/actions/basket'
 import { IlistClothes } from '../../type/shop'
 import Button from '../../Components/Button/Button'
 import Dropdown from '../../Components/Dropdown/Dropdown'
@@ -15,13 +15,14 @@ import DropdownList from '../../Components/DropdownList/DropdownList'
 
 const ProductDetail: React.FC = () => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
+
     const dispatch = useDispatch()
     const { id } = useParams<{ id: string }>()
-    const { name, price, color, size, img_card1, img_card2 } =
+    const { name, price, color, size, img_main, img_card1, img_card2 } =
         useSelector((state: RootState) => selecCtlothesById(state, Number(id))) as IlistClothes
-
-    console.log("id", id)
-
 
     const [activeSize, setActiveSize] = useState('Выбрать размер')
 
@@ -31,31 +32,18 @@ const ProductDetail: React.FC = () => {
 
     const handleClickAddClothes = () => {
         if (activeSize !== "Выбрать размер") {
-            const selectItem: IbasketPayload = {
+            const newItem: IbasketApplicant = {
                 id: id + activeSize,
+                name: name,
+                price: price,
                 size: activeSize,
-                action: basketActionButton.plus
+                color: color,
+                img_main: img_main
             }
-            dispatch(actionBasket(selectItem))
-            toast.success(`${name} (${size}) успешно добавлена в корзину`, {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
+            dispatch(addItemAction(newItem))
+            toast.success(`${name} (${activeSize}) успешно добавлена в корзину`);
         } else {
-            toast.error('Необходимо выбра размер', {
-                position: "bottom-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            });
+            toast.error('Необходимо выбра размер');
         }
     }
 
@@ -93,7 +81,17 @@ const ProductDetail: React.FC = () => {
                                 style={{ width: "100%" }}>
                                 <span>Добавить в корзину</span>
                             </Button>
-                            <ToastContainer />
+                            <ToastContainer
+                                position="bottom-right"
+                                autoClose={5000}
+                                hideProgressBar={false}
+                                newestOnTop={false}
+                                closeOnClick
+                                rtl={false}
+                                pauseOnFocusLoss
+                                draggable
+                                pauseOnHover
+                            />
                         </div>
                     </div>
                 </div>

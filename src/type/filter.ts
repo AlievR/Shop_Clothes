@@ -66,11 +66,11 @@ export enum colorType {
 
 
 export enum sizeType {
-    xs = "xs",
-    s = "s",
-    m = "m",
-    l = "l",
-    xl = "xl"
+    xs = "XS",
+    s = "S",
+    m = "M",
+    l = "L",
+    xl = "XL"
 }
 
 interface IsizeFiltersAction {

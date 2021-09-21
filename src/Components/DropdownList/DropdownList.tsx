@@ -2,7 +2,6 @@ import React from 'react'
 import './DropdownList.scss'
 import { IfilterListItemComponent } from '../../type/filter'
 
-
 const DropdownList: React.FC<IfilterListItemComponent> =
     ({ options,
         activeValue,
@@ -18,10 +17,10 @@ const DropdownList: React.FC<IfilterListItemComponent> =
             }
         }
 
-        const renderFilterItems = options.map((opt) => {
+        const renderFilterItems = options.map((value) => {
             const check = (typeof activeValue === "object")
-                ? activeValue.includes(opt)
-                : activeValue === opt
+                ? activeValue.includes(value)
+                : activeValue === value
 
             let classNameItem = "app-dropdown-list__item"
             let classNameBox = "app-dropdown-list__box"
@@ -31,15 +30,14 @@ const DropdownList: React.FC<IfilterListItemComponent> =
             }
 
             return (
-                <li className={classNameItem} key={opt}
-                    onClick={() => handleClickDropDownItem(opt)}
+                <li className={classNameItem} key={value}
+                    onClick={() => handleClickDropDownItem(value)}
                 >
                     <span className={classNameBox} />
-                    <span className="app-dropdown-list__value">{opt}</span>
+                    <span className="app-dropdown-list__value">{value}</span>
                 </li>
             )
         })
-
 
         return (
             <ul className="app-dropdown-list">
